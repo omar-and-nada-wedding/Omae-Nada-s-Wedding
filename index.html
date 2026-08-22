@@ -359,13 +359,37 @@
 
 
         /* ==================================================
+           PHONE OPEN-INVITATION OVERLAY
+           ================================================== */
+
+        .open-overlay {
+            display: none;
+        }
+
+
+        /* ==================================================
            PHONE VERSION
            ================================================== */
 
         @media (max-width: 600px) {
 
+            body {
+                background-color: white;
+            }
+
+
             .page1 {
                 width: 100%;
+
+                min-height: 100vh;
+
+                background-color: white;
+            }
+
+
+            .page1 > img:first-child {
+                width: 100%;
+                height: auto;
             }
 
 
@@ -410,6 +434,77 @@
                 width: 8%;
             }
 
+
+            /* =========================
+               TAP TO OPEN OVERLAY
+               ========================= */
+
+            .open-overlay {
+                position: fixed;
+
+                inset: 0;
+
+                z-index: 9999;
+
+                display: flex;
+
+                align-items: center;
+                justify-content: center;
+
+                background-color: white;
+
+                cursor: pointer;
+
+                opacity: 1;
+
+                transition:
+                    opacity
+                    0.6s
+                    ease;
+            }
+
+
+            .open-overlay-content {
+                padding: 30px;
+
+                text-align: center;
+
+                color: #5a5b5e;
+            }
+
+
+            .open-overlay-title {
+                margin: 0;
+
+                font-family: "Dream Avenue", serif;
+                font-weight: normal;
+
+                font-size: 10vw;
+
+                line-height: 1;
+
+                letter-spacing: 0.08em;
+            }
+
+
+            .open-overlay-subtitle {
+                margin: 22px 0 0;
+
+                font-family: "Blastine", cursive;
+                font-weight: normal;
+
+                font-size: 7vw;
+
+                line-height: 1.2;
+            }
+
+
+            .open-overlay.hidden {
+                opacity: 0;
+
+                pointer-events: none;
+            }
+
         }
 
 
@@ -434,6 +529,16 @@
                 width: 9%;
             }
 
+
+            .open-overlay-title {
+                font-size: 9.5vw;
+            }
+
+
+            .open-overlay-subtitle {
+                font-size: 6.5vw;
+            }
+
         }
 
     </style>
@@ -442,6 +547,33 @@
 
 
 <body>
+
+
+    <!-- ==================================================
+         PHONE TAP-TO-OPEN OVERLAY
+         ================================================== -->
+
+    <div
+        class="open-overlay"
+        id="openOverlay"
+    >
+
+        <div class="open-overlay-content">
+
+
+            <h1 class="open-overlay-title">
+                OMAR &amp; NADA
+            </h1>
+
+
+            <p class="open-overlay-subtitle">
+                Tap to open invitation
+            </p>
+
+
+        </div>
+
+    </div>
 
 
     <!-- ==================================================
@@ -543,6 +675,18 @@
             );
 
 
+        const openOverlay =
+            document.getElementById(
+                "openOverlay"
+            );
+
+
+        const nextButton =
+            document.querySelector(
+                ".next-button"
+            );
+
+
         weddingMusic.volume = 0.7;
 
 
@@ -614,10 +758,10 @@
 
                 /*
                    Browser blocked automatic
-                   audible playback.
+                   playback.
 
-                   The first click or touch
-                   will unlock it.
+                   On phone, the overlay tap
+                   handles this.
                 */
 
             }
@@ -625,13 +769,67 @@
         }
 
 
-        /* Try autoplay */
+        /* ==================================================
+           DESKTOP AUTOPLAY ATTEMPT
+           ================================================== */
 
-        startWeddingMusic();
+        if (
+            window.matchMedia(
+                "(min-width: 601px)"
+            ).matches
+        ) {
+
+            startWeddingMusic();
+
+        }
 
 
         /* ==================================================
-           FIRST USER INTERACTION
+           PHONE TAP-TO-OPEN
+           ================================================== */
+
+        if (openOverlay) {
+
+            openOverlay.addEventListener(
+
+                "click",
+
+                async function() {
+
+
+                    await startWeddingMusic();
+
+
+                    openOverlay.classList.add(
+                        "hidden"
+                    );
+
+
+                    setTimeout(
+
+                        function() {
+
+                            openOverlay.style.display =
+                                "none";
+
+                        },
+
+                        650
+
+                    );
+
+                }
+
+            );
+
+        }
+
+
+        /* ==================================================
+           DESKTOP / GENERAL FALLBACK
+
+           If autoplay is blocked,
+           first interaction starts music.
            ================================================== */
 
         async function unlockWeddingMusic() {
@@ -654,7 +852,7 @@
 
 
         /* ==================================================
-           SAVE MUSIC POSITION CONTINUOUSLY
+           SAVE MUSIC POSITION
            ================================================== */
 
         setInterval(
@@ -683,17 +881,8 @@
 
 
         /* ==================================================
-           NEXT PAGE BUTTON
-
-           Start music before opening Page 2,
-           then save the exact playback position.
+           NEXT BUTTON
            ================================================== */
-
-        const nextButton =
-            document.querySelector(
-                ".next-button"
-            );
-
 
         if (nextButton) {
 
@@ -703,13 +892,13 @@
 
                 async function(event) {
 
+
                     event.preventDefault();
 
 
                     /*
-                       Button click counts as a
-                       user interaction, so this
-                       can unlock audio if needed.
+                       Ensure music is playing before
+                       moving to Page 2.
                     */
 
                     await startWeddingMusic();
@@ -721,12 +910,6 @@
                     );
 
 
-                    /*
-                       Tiny delay allows playback
-                       state to settle before
-                       loading the second page.
-                    */
-
                     setTimeout(
 
                         function() {
@@ -736,7 +919,7 @@
 
                         },
 
-                        120
+                        100
 
                     );
 
