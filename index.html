@@ -55,9 +55,7 @@
 
         .page1 {
             position: relative;
-
             width: 100%;
-
             overflow: hidden;
         }
 
@@ -69,7 +67,6 @@
         .page1 > img:first-child {
             width: 100%;
             height: auto;
-
             display: block;
         }
 
@@ -78,10 +75,7 @@
            ANIMATIONS
            ================================================== */
 
-
-        /* OMAR:
-           LEFT → RIGHT
-        */
+        /* OMAR: LEFT → RIGHT */
 
         @keyframes omarEnter {
 
@@ -106,9 +100,7 @@
         }
 
 
-        /* NADA:
-           RIGHT → LEFT
-        */
+        /* NADA: RIGHT → LEFT */
 
         @keyframes nadaEnter {
 
@@ -133,9 +125,7 @@
         }
 
 
-        /* AMPERSAND:
-           TOP → DOWN
-        */
+        /* AMPERSAND: TOP → DOWN */
 
         @keyframes ampersandEnter {
 
@@ -160,9 +150,7 @@
         }
 
 
-        /* ANNOUNCEMENT:
-           LEFT → RIGHT WIPE
-        */
+        /* ANNOUNCEMENT: LEFT → RIGHT WIPE */
 
         @keyframes announcementReveal {
 
@@ -185,9 +173,7 @@
         }
 
 
-        /* NEXT BUTTON:
-           LEFT → RIGHT
-        */
+        /* NEXT BUTTON: LEFT → RIGHT */
 
         @keyframes buttonEnter {
 
@@ -378,7 +364,6 @@
         .next-button img {
             width: 100%;
             height: auto;
-
             display: block;
         }
 
@@ -401,10 +386,7 @@
         @media (max-width: 600px) {
 
 
-            /*
-               Removes the black area that was
-               appearing underneath Page 1.
-            */
+            /* WHITE BACKGROUND FIX */
 
             body {
                 background-color: white;
@@ -413,7 +395,6 @@
 
             .page1 {
                 width: 100%;
-
                 background-color: white;
             }
 
@@ -505,12 +486,12 @@
                 padding: 30px;
 
                 text-align: center;
-
-                color: #5a5b5e;
             }
 
 
-            .open-overlay-title {
+            /* ONLY TEXT ON THE OVERLAY */
+
+            .open-overlay-text {
                 margin: 0;
 
                 color: #5a5b5e;
@@ -518,27 +499,12 @@
                 font-family: "Dream Avenue", serif;
                 font-weight: normal;
 
-                font-size: 10vw;
-
-                line-height: 1;
+                font-size: 7vw;
+                line-height: 1.3;
 
                 letter-spacing: 0.08em;
 
-                text-transform: uppercase;
-            }
-
-
-            .open-overlay-subtitle {
-                margin: 22px 0 0;
-
-                color: #5a5b5e;
-
-                font-family: "Blastine", cursive;
-                font-weight: normal;
-
-                font-size: 7vw;
-
-                line-height: 1.2;
+                text-align: center;
             }
 
 
@@ -573,12 +539,7 @@
             }
 
 
-            .open-overlay-title {
-                font-size: 9.5vw;
-            }
-
-
-            .open-overlay-subtitle {
+            .open-overlay-text {
                 font-size: 6.5vw;
             }
 
@@ -603,16 +564,9 @@
 
         <div class="open-overlay-content">
 
-
-            <h1 class="open-overlay-title">
-                OMAR &amp; NADA
-            </h1>
-
-
-            <p class="open-overlay-subtitle">
-                Tap to open invitation
+            <p class="open-overlay-text">
+                Tap to Open the Invitation
             </p>
-
 
         </div>
 
@@ -830,10 +784,9 @@
         /* ==================================================
            PHONE TAP-TO-OPEN
 
-           ONE interaction:
-           1. start music
-           2. fade overlay
-           3. remove overlay
+           1. Start music
+           2. Fade overlay
+           3. Reveal Page 1
            ================================================== */
 
         if (openOverlay) {
@@ -876,8 +829,8 @@
         /* ==================================================
            DESKTOP FALLBACK
 
-           If autoplay was blocked, any first
-           interaction can start the music.
+           If autoplay was blocked, the first
+           interaction starts the music.
            ================================================== */
 
         if (
