@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+
+    <meta charset="UTF-8">
 
     <title>Omar & Nada - Wedding Invitation</title>
 
@@ -9,6 +11,58 @@
         name="viewport"
         content="width=device-width, initial-scale=1.0"
     >
+
+
+    <!-- ==================================================
+         PRELOAD PAGE 2 CRITICAL ASSETS
+         ================================================== -->
+
+    <link
+        rel="preload"
+        href="images/couple2.jpg"
+        as="image"
+        fetchpriority="high"
+    >
+
+    <link
+        rel="preload"
+        href="fonts/The-something-script.woff"
+        as="font"
+        type="font/woff"
+        crossorigin
+    >
+
+    <link
+        rel="preload"
+        href="fonts/Ovo.woff"
+        as="font"
+        type="font/woff"
+        crossorigin
+    >
+
+    <link
+        rel="preload"
+        href="fonts/della-respira.woff"
+        as="font"
+        type="font/woff"
+        crossorigin
+    >
+
+    <link
+        rel="preload"
+        href="fonts/PlayfairDisplay-Regular.ttf"
+        as="font"
+        type="font/ttf"
+        crossorigin
+    >
+
+    <link
+        rel="preload"
+        href="music/wedding-music.mp3"
+        as="audio"
+        type="audio/mpeg"
+    >
+
 
     <style>
 
@@ -21,6 +75,7 @@
             src: url("fonts/The-something-script.woff") format("woff");
             font-weight: normal;
             font-style: normal;
+            font-display: swap;
         }
 
         @font-face {
@@ -28,6 +83,7 @@
             src: url("fonts/Ovo.woff") format("woff");
             font-weight: normal;
             font-style: normal;
+            font-display: swap;
         }
 
         @font-face {
@@ -35,6 +91,7 @@
             src: url("fonts/della-respira.woff") format("woff");
             font-weight: normal;
             font-style: normal;
+            font-display: swap;
         }
 
         @font-face {
@@ -42,12 +99,9 @@
             src: url("fonts/PlayfairDisplay-Regular.ttf") format("truetype");
             font-weight: 400;
             font-style: normal;
+            font-display: swap;
         }
 
-
-        /* ==================================================
-           WHOLE PAGE
-           ================================================== */
 
         * {
             box-sizing: border-box;
@@ -72,26 +126,18 @@
 
         .section1 {
             position: relative;
-
             width: min(100%, 600px);
-
             margin: 0 auto;
-
             overflow: hidden;
         }
 
 
         .couple2 {
             display: block;
-
             width: 100%;
             height: auto;
         }
 
-
-        /* ==================================================
-           SECTION 1 ANIMATIONS
-           ================================================== */
 
         @keyframes heartWipeDown {
 
@@ -109,12 +155,9 @@
             to {
                 opacity: 1;
 
-                clip-path: inset(0 0 0 0);
+                clip-path: inset(0);
 
-                transform: translate(
-                    -50%,
-                    -50%
-                );
+                transform: translate(-50%, -50%);
             }
 
         }
@@ -123,17 +166,18 @@
         @keyframes textMoveDown {
 
             from {
+
                 transform: translate(
                     -50%,
                     calc(-50% - 20px)
                 );
+
             }
 
             to {
-                transform: translate(
-                    -50%,
-                    -50%
-                );
+
+                transform: translate(-50%, -50%);
+
             }
 
         }
@@ -148,7 +192,6 @@
             transform: translate(-50%, -50%);
 
             width: 67%;
-            height: auto;
 
             animation:
                 heartWipeDown
@@ -158,10 +201,6 @@
                 both;
         }
 
-
-        /* ==================================================
-           SECTION 1 TYPEWRITER
-           ================================================== */
 
         .tying-knot-wrapper {
             position: absolute;
@@ -175,11 +214,8 @@
             max-width: 90%;
 
             font-family: "The Something Script", cursive;
-            font-weight: normal;
 
             font-size: clamp(32px, 4vw, 58px);
-
-            line-height: 1;
 
             white-space: nowrap;
 
@@ -194,10 +230,7 @@
 
         .tying-knot-measure {
             margin: 0;
-
             visibility: hidden;
-
-            white-space: nowrap;
         }
 
 
@@ -211,14 +244,12 @@
 
             color: white;
 
-            text-align: left;
-
             white-space: nowrap;
         }
 
 
         /* ==================================================
-           SECTION 2 ANIMATIONS
+           GENERAL ENTRANCE
            ================================================== */
 
         @keyframes section2FadeIn {
@@ -269,26 +300,21 @@
             to {
                 opacity: 1;
 
-                transform: translate(
-                    -50%,
-                    -50%
-                );
+                transform: translate(-50%, -50%);
             }
 
         }
 
 
         /* ==================================================
-           FLOWER BREEZE
+           FLOWER MOVEMENT
            ================================================== */
 
         @keyframes orangeLeftBreeze {
 
             0%,
             100% {
-                transform:
-                    rotate(30deg)
-                    translateY(0);
+                transform: rotate(30deg);
             }
 
             50% {
@@ -304,9 +330,7 @@
 
             0%,
             100% {
-                transform:
-                    rotate(-30deg)
-                    translateY(0);
+                transform: rotate(-30deg);
             }
 
             50% {
@@ -322,9 +346,7 @@
 
             0%,
             100% {
-                transform:
-                    rotate(0deg)
-                    translateY(0);
+                transform: rotate(0);
             }
 
             50% {
@@ -340,9 +362,7 @@
 
             0%,
             100% {
-                transform:
-                    rotate(0deg)
-                    translateY(0);
+                transform: rotate(0);
             }
 
             50% {
@@ -367,9 +387,9 @@
 
             margin: 0 auto;
 
-            background-color: white;
-
             overflow: hidden;
+
+            background: white;
         }
 
 
@@ -380,9 +400,6 @@
             left: 1%;
 
             width: 19%;
-            height: auto;
-
-            transform: rotate(30deg);
 
             transform-origin: 25% 80%;
 
@@ -397,11 +414,10 @@
         .white-flower-right {
             position: absolute;
 
-            top: 0%;
-            right: 0%;
+            top: 0;
+            right: 0;
 
             width: 22%;
-            height: auto;
 
             transform-origin: 75% 20%;
 
@@ -420,7 +436,6 @@
             left: -1%;
 
             width: 20%;
-            height: auto;
 
             transform-origin: 20% 60%;
 
@@ -439,9 +454,6 @@
             right: 1%;
 
             width: 20%;
-            height: auto;
-
-            transform: rotate(-30deg);
 
             transform-origin: 75% 75%;
 
@@ -453,91 +465,74 @@
         }
 
 
-        /* ==================================================
-           SECTION 2 TEXT
-           ================================================== */
-
-        .section2-top-text {
+        .section2-top-text,
+        .section2-middle-text {
             position: absolute;
 
-            top: 10%;
             left: 50%;
 
             transform: translateX(-50%);
-
-            width: 68%;
 
             text-align: center;
 
             color: #303030;
 
             font-family: "Ovo", serif;
-            font-weight: normal;
+
+            text-transform: uppercase;
+
+            opacity: 0;
+        }
+
+
+        .section2-top-text {
+            top: 10%;
+
+            width: 68%;
 
             font-size: clamp(15px, 1.55vw, 22px);
 
             line-height: 1.9;
 
             letter-spacing: 0.20em;
-
-            text-transform: uppercase;
-
-            opacity: 0;
-        }
-
-
-        .section2.animate .section2-top-text {
-            animation:
-                section2TextReveal
-                1.4s
-                ease-out
-                0s
-                both;
         }
 
 
         .section2-middle-text {
-            position: absolute;
-
             top: 49%;
-            left: 50%;
-
-            transform: translateX(-50%);
 
             width: 67%;
-
-            text-align: center;
-
-            color: #303030;
-
-            font-family: "Ovo", serif;
-            font-weight: normal;
 
             font-size: clamp(15px, 1.55vw, 22px);
 
             line-height: 1.75;
 
             letter-spacing: 0.20em;
+        }
 
-            text-transform: uppercase;
 
-            opacity: 0;
+        .section2.animate .section2-top-text {
+
+            animation:
+                section2TextReveal
+                1.4s
+                ease-out
+                both;
+
         }
 
 
         .section2.animate .section2-middle-text {
+
             animation:
                 section2TextReveal
                 1.4s
                 ease-out
                 0.35s
                 both;
+
         }
 
-
-        /* ==================================================
-           WEDDING RINGS
-           ================================================== */
 
         .wedding-rings {
             position: absolute;
@@ -549,25 +544,21 @@
 
             width: 70%;
 
-            height: auto;
-
             opacity: 0;
         }
 
 
         .section2.animate .wedding-rings {
+
             animation:
                 ringsReveal
                 1.5s
                 ease-out
                 0.8s
                 both;
+
         }
 
-
-        /* ==================================================
-           DATE / TIME / LOCATION
-           ================================================== */
 
         .section2-details {
             position: absolute;
@@ -581,10 +572,7 @@
 
             text-align: center;
 
-            color: #333333;
-
             font-family: "Ovo", serif;
-            font-weight: normal;
 
             text-transform: uppercase;
 
@@ -603,6 +591,24 @@
         }
 
 
+        .section2-time {
+            margin: 3.5% 0 0;
+
+            font-size: clamp(12px, 1.25vw, 18px);
+
+            opacity: 0;
+        }
+
+
+        .section2-location {
+            margin: 2.5% 0 0;
+
+            font-size: clamp(12px, 1.2vw, 17px);
+
+            opacity: 0;
+        }
+
+
         .section2.animate .section2-date {
             animation:
                 section2FadeIn
@@ -613,15 +619,6 @@
         }
 
 
-        .section2-time {
-            margin: 3.5% 0 0;
-
-            font-size: clamp(12px, 1.25vw, 18px);
-
-            opacity: 0;
-        }
-
-
         .section2.animate .section2-time {
             animation:
                 section2FadeIn
@@ -629,15 +626,6 @@
                 ease-out
                 1.55s
                 both;
-        }
-
-
-        .section2-location {
-            margin: 2.5% 0 0;
-
-            font-size: clamp(12px, 1.2vw, 17px);
-
-            opacity: 0;
         }
 
 
@@ -656,17 +644,11 @@
            ================================================== */
 
         .section3 {
-            position: relative;
-
             width: min(100%, 600px);
 
             aspect-ratio: 690 / 212;
 
             margin: 0 auto;
-
-            background-color: white;
-
-            overflow: hidden;
 
             display: flex;
 
@@ -685,7 +667,6 @@
             color: #b3a070;
 
             font-family: "Della Respira", serif;
-            font-weight: normal;
 
             font-size: clamp(15px, 1.4vw, 20px);
 
@@ -733,8 +714,6 @@
 
             margin: 0 auto;
 
-            background-color: white;
-
             overflow: hidden;
         }
 
@@ -753,8 +732,7 @@
             to {
                 opacity: 1;
 
-                transform:
-                    translateX(-50%);
+                transform: translateX(-50%);
             }
 
         }
@@ -774,8 +752,7 @@
             to {
                 opacity: 1;
 
-                transform:
-                    translateX(-50%);
+                transform: translateX(-50%);
             }
 
         }
@@ -797,18 +774,11 @@
                 opacity: 1;
 
                 transform:
-                    translate(
-                        -50%,
-                        -50%
-                    );
+                    translate(-50%, -50%);
             }
 
         }
 
-
-        /* ==================================================
-           OUR WEDDING IS IN
-           ================================================== */
 
         .countdown-heading {
             position: absolute;
@@ -818,16 +788,11 @@
 
             transform: translateX(-50%);
 
-            width: 80%;
-
             margin: 0;
-
-            text-align: center;
 
             color: #5a5b5e;
 
             font-family: "The Something Script", cursive;
-            font-weight: normal;
 
             font-size: clamp(40px, 5.2vw, 68px);
 
@@ -838,18 +803,16 @@
 
 
         .section4.animate .countdown-heading {
+
             animation:
                 section4FromLeft
                 1.5s
                 ease-out
                 0.2s
                 both;
+
         }
 
-
-        /* ==================================================
-           COUNTDOWN
-           ================================================== */
 
         .countdown {
             position: absolute;
@@ -874,12 +837,14 @@
 
 
         .section4.animate .countdown {
+
             animation:
                 section2FadeIn
                 1.5s
                 ease-out
                 0.45s
                 both;
+
         }
 
 
@@ -894,11 +859,8 @@
             color: #b3a070;
 
             font-family: "Playfair Display", serif;
-            font-weight: 400;
 
             font-size: clamp(36px, 5vw, 68px);
-
-            line-height: 1;
         }
 
 
@@ -910,19 +872,10 @@
             color: #504739;
 
             font-family: "Playfair Display", serif;
-            font-weight: 400;
 
             font-size: clamp(14px, 1.6vw, 22px);
-
-            letter-spacing: 0;
-
-            text-transform: none;
         }
 
-
-        /* ==================================================
-           HEART 2
-           ================================================== */
 
         .heart2 {
             position: absolute;
@@ -934,25 +887,21 @@
 
             width: 3%;
 
-            height: auto;
-
             opacity: 0;
         }
 
 
         .section4.animate .heart2 {
+
             animation:
                 heart2FromRight
                 1.5s
                 ease-out
                 0.2s
                 both;
+
         }
 
-
-        /* ==================================================
-           SAVE THE DATE
-           ================================================== */
 
         .save-date {
             position: absolute;
@@ -962,14 +911,11 @@
 
             transform: translateX(-50%);
 
-            width: max-content;
-
             margin: 0;
 
             color: #5a5b5e;
 
             font-family: "The Something Script", cursive;
-            font-weight: normal;
 
             font-size: clamp(36px, 4.7vw, 62px);
 
@@ -980,12 +926,14 @@
 
 
         .section4.animate .save-date {
+
             animation:
                 section4FromRight
                 1.5s
                 ease-out
                 0.2s
                 both;
+
         }
 
 
@@ -1001,8 +949,6 @@
             aspect-ratio: 778 / 354;
 
             margin: 0 auto;
-
-            background-color: white;
 
             overflow: hidden;
         }
@@ -1029,29 +975,6 @@
         }
 
 
-        @keyframes locationArrowReveal {
-
-            from {
-                opacity: 0;
-
-                clip-path: inset(0 100% 0 0);
-
-                transform:
-                    translate(-50%, -50%);
-            }
-
-            to {
-                opacity: 1;
-
-                clip-path: inset(0 0 0 0);
-
-                transform:
-                    translate(-50%, -50%);
-            }
-
-        }
-
-
         @keyframes locationHereFade {
 
             from {
@@ -1066,8 +989,7 @@
                 opacity: 1;
 
                 transform:
-                    translate(-50%, -50%)
-                    translateY(0);
+                    translate(-50%, -50%);
             }
 
         }
@@ -1081,16 +1003,11 @@
 
             transform: translateX(-50%);
 
-            width: 80%;
-
             margin: 0;
-
-            text-align: center;
 
             color: #5a5b5e;
 
             font-family: "Della Respira", serif;
-            font-weight: normal;
 
             font-size: clamp(14px, 1.7vw, 22px);
 
@@ -1103,12 +1020,14 @@
 
 
         .section5.animate .location-heading {
+
             animation:
                 locationHeadingDrop
                 1.4s
                 ease-out
                 0.1s
                 both;
+
         }
 
 
@@ -1122,19 +1041,19 @@
 
             width: 10%;
 
-            height: auto;
-
             opacity: 0;
         }
 
 
         .section5.animate .location-arrow {
+
             animation:
-                locationArrowReveal
+                section2FadeIn
                 1.6s
                 ease-out
                 0.55s
                 both;
+
         }
 
 
@@ -1149,7 +1068,6 @@
             color: #b3a070;
 
             font-family: "Della Respira", serif;
-            font-weight: normal;
 
             font-size: clamp(13px, 1.6vw, 21px);
 
@@ -1157,26 +1075,19 @@
 
             text-decoration: underline;
 
-            text-underline-offset: 5px;
-
             opacity: 0;
-
-            cursor: pointer;
         }
 
 
         .section5.animate .location-link {
+
             animation:
                 locationHereFade
                 1.2s
                 ease-out
                 0.9s
                 both;
-        }
 
-
-        .location-link:hover {
-            opacity: 0.75;
         }
 
 
@@ -1192,8 +1103,6 @@
             aspect-ratio: 1798 / 547;
 
             margin: 0 auto;
-
-            background-color: white;
 
             overflow: hidden;
         }
@@ -1213,8 +1122,7 @@
             to {
                 opacity: 1;
 
-                transform:
-                    translateX(-50%);
+                transform: translateX(-50%);
             }
 
         }
@@ -1225,15 +1133,13 @@
             from {
                 opacity: 0;
 
-                transform:
-                    translateY(25px);
+                transform: translateY(25px);
             }
 
             to {
                 opacity: 1;
 
-                transform:
-                    translateY(0);
+                transform: translateY(0);
             }
 
         }
@@ -1247,21 +1153,13 @@
 
             transform: translateX(-50%);
 
-            width: max-content;
-            max-width: 90%;
-
             margin: 0;
-
-            text-align: center;
 
             color: #5a5b5e;
 
             font-family: "The Something Script", cursive;
-            font-weight: normal;
 
             font-size: clamp(40px, 5vw, 72px);
-
-            line-height: 1;
 
             white-space: nowrap;
 
@@ -1270,12 +1168,14 @@
 
 
         .section6.animate .final-message {
+
             animation:
                 finalTextEnter
                 1.6s
                 ease-out
                 0.15s
                 both;
+
         }
 
 
@@ -1287,151 +1187,57 @@
 
             width: 100%;
 
-            height: auto;
-
-            display: block;
-
             opacity: 0;
         }
 
 
         .section6.animate .final-flowers {
+
             animation:
                 finalFlowersEnter
                 1.8s
                 ease-out
                 0.45s
                 both;
+
         }
 
 
         /* ==================================================
-           PHONE VERSION
+           MOBILE
            ================================================== */
 
         @media (max-width: 600px) {
 
 
-            /* ==================================================
-               SECTION 1
-               ================================================== */
-
-            .section1 {
+            .section1,
+            .section2,
+            .section3,
+            .section4,
+            .section5,
+            .section6 {
                 width: 100%;
-            }
-
-
-            .couple2 {
-                width: 100%;
-                height: auto;
-            }
-
-
-            .heart1 {
-                top: 44%;
-                left: 50%;
-
-                width: 67%;
             }
 
 
             .tying-knot-wrapper {
-                top: 53%;
-                left: 50%;
-
                 font-size: 9vw;
-
-                max-width: 90%;
             }
 
 
-            /* ==================================================
-               SECTION 2
-               ================================================== */
-
-            .section2 {
-                width: 100%;
-
-                aspect-ratio: 595 / 569;
-            }
-
-
-            .orange-flower-left {
-                top: 3%;
-                left: 1%;
-
-                width: 19%;
-            }
-
-
-            .white-flower-right {
-                top: 0%;
-                right: 0%;
-
-                width: 22%;
-            }
-
-
-            .white-flower-left {
-                top: 45%;
-                left: -1%;
-
-                width: 20%;
-            }
-
-
-            .orange-flower-right {
-                top: 36%;
-                right: 1%;
-
-                width: 20%;
-            }
-
-
-            /*
-               SMALLER INVITATION TEXT
-            */
+            /* INVITATION SMALLER */
 
             .section2-top-text {
-                top: 10%;
-
-                width: 68%;
-
                 font-size: 2.8vw;
-
-                line-height: 1.9;
 
                 letter-spacing: 0.16em;
             }
 
 
             .section2-middle-text {
-                top: 49%;
-
-                width: 67%;
-
                 font-size: 2.8vw;
 
-                line-height: 1.75;
-
                 letter-spacing: 0.16em;
-            }
-
-
-            .wedding-rings {
-                top: 40%;
-                left: 45%;
-
-                width: 70%;
-            }
-
-
-            .section2-details {
-                top: 82%;
-
-                width: 82%;
-
-                letter-spacing: 0.15em;
             }
 
 
@@ -1450,55 +1256,21 @@
             }
 
 
-            /* ==================================================
-               SECTION 3
-               ================================================== */
-
-            .section3 {
-                width: 100%;
-
-                aspect-ratio: 690 / 212;
-            }
-
-
             .grownups-message {
-                width: 88%;
-
                 font-size: 3.1vw;
-
-                line-height: 1.66;
 
                 letter-spacing: 0.11em;
             }
 
 
-            /* ==================================================
-               SECTION 4
-               ================================================== */
-
-            .section4 {
-                width: 100%;
-
-                aspect-ratio: 1513 / 512;
-            }
-
+            /* COUNTDOWN SMALLER */
 
             .countdown-heading {
-                top: 8%;
-
-                width: 80%;
-
                 font-size: 7vw;
             }
 
 
-            /*
-               SMALLER COUNTDOWN
-            */
-
             .countdown {
-                top: 47%;
-
                 width: 72%;
 
                 gap: 5%;
@@ -1517,10 +1289,6 @@
             }
 
 
-            /*
-               KEEP FINAL HEART POSITION
-            */
-
             .heart2 {
                 top: 84%;
                 left: 63%;
@@ -1537,26 +1305,9 @@
             }
 
 
-            /* ==================================================
-               SECTION 5
-               ================================================== */
-
-            .section5 {
-                width: 100%;
-
-                aspect-ratio: 778 / 354;
-            }
-
-
-            /*
-               SMALLER FIND THE LOCATION
-            */
+            /* LOCATION SMALLER */
 
             .location-heading {
-                top: 14%;
-
-                width: 80%;
-
                 font-size: 3.2vw;
 
                 letter-spacing: 0.15em;
@@ -1564,113 +1315,35 @@
 
 
             .location-arrow {
-                top: 61%;
                 left: 35%;
 
                 width: 10%;
             }
 
 
-            /*
-               SMALLER HERE
-            */
-
             .location-link {
-                top: 61%;
                 left: 50%;
 
                 font-size: 2.8vw;
 
                 letter-spacing: 0.12em;
-
-                text-underline-offset: 3px;
             }
 
 
-            /* ==================================================
-               SECTION 6
-               ================================================== */
-
-            .section6 {
-                width: 100%;
-
-                aspect-ratio: 1798 / 547;
-            }
-
-
-            /*
-               BIGGER FINAL MESSAGE
-            */
+            /* FINAL TEXT BIGGER */
 
             .final-message {
-                top: 11%;
-
-                max-width: 94%;
-
                 font-size: 9vw;
-            }
-
-
-            .final-flowers {
-                bottom: 0;
-                left: 0;
-
-                width: 100%;
             }
 
         }
 
 
-        /* ==================================================
-           EXTRA SMALL PHONES
-           ================================================== */
-
         @media (max-width: 380px) {
 
-
-            .tying-knot-wrapper {
-                font-size: 8.5vw;
-            }
-
-
-            .section2-top-text {
-                font-size: 2.7vw;
-
-                letter-spacing: 0.14em;
-            }
-
-
+            .section2-top-text,
             .section2-middle-text {
                 font-size: 2.7vw;
-
-                letter-spacing: 0.14em;
-            }
-
-
-            .section2-date {
-                font-size: 3.3vw;
-            }
-
-
-            .section2-time {
-                font-size: 2.7vw;
-            }
-
-
-            .section2-location {
-                font-size: 2.5vw;
-            }
-
-
-            .grownups-message {
-                font-size: 3vw;
-
-                letter-spacing: 0.09em;
-            }
-
-
-            .countdown-heading {
-                font-size: 6.7vw;
             }
 
 
@@ -1684,15 +1357,8 @@
             }
 
 
-            .save-date {
-                font-size: 6.7vw;
-            }
-
-
             .location-heading {
                 font-size: 3vw;
-
-                letter-spacing: 0.13em;
             }
 
 
@@ -1715,29 +1381,26 @@
 <body>
 
 
-    <!-- ==================================================
-         SECTION 1
-         ================================================== -->
+    <!-- SECTION 1 -->
 
     <section class="section1">
-
 
         <img
             class="couple2"
             src="images/couple2.jpg"
             alt="Omar and Nada"
+            fetchpriority="high"
+            decoding="async"
         >
-
 
         <img
             class="heart1"
             src="images/heart1.png"
             alt=""
+            decoding="async"
         >
 
-
         <div class="tying-knot-wrapper">
-
 
             <p
                 class="tying-knot-measure"
@@ -1746,110 +1409,99 @@
                 We are tying the knot
             </p>
 
-
             <p
                 class="tying-knot"
                 id="tyingKnot"
             ></p>
 
-
         </div>
-
 
     </section>
 
 
-    <!-- ==================================================
-         SECTION 2
-         ================================================== -->
+    <!-- SECTION 2 -->
 
     <section
         class="section2"
         id="section2"
     >
 
-
         <img
             class="orange-flower-left"
             src="images/orange-flower-left.png"
             alt=""
+            loading="lazy"
+            decoding="async"
         >
-
 
         <img
             class="white-flower-right"
             src="images/white-flower-right.png"
             alt=""
+            loading="lazy"
+            decoding="async"
         >
-
 
         <img
             class="white-flower-left"
             src="images/white-flower-left.png"
             alt=""
+            loading="lazy"
+            decoding="async"
         >
-
 
         <img
             class="orange-flower-right"
             src="images/orange-flower-right.png"
             alt=""
+            loading="lazy"
+            decoding="async"
         >
 
 
         <div class="section2-top-text">
-
             WE’RE BRINGING TOGETHER<br>
             OUR FAVORITE PEOPLE –<br>
             FRIENDS &amp; FAMILY
-
         </div>
 
 
         <div class="section2-middle-text">
-
             TO JOIN US IN<br>
             CELEBRATING LOVE,<br>
             HAPPINESS, AND OUR<br>
             HAPPILY EVER AFTER.
-
         </div>
 
 
         <img
             class="wedding-rings"
             src="images/wedding-rings.png"
-            alt="Wedding rings"
+            alt=""
+            decoding="async"
         >
 
 
         <div class="section2-details">
 
-
             <p class="section2-date">
                 FRI | 11 | SEP
             </p>
-
 
             <p class="section2-time">
                 5:00 PM
             </p>
 
-
             <p class="section2-location">
                 KHAN AL MANSORYA, GIZA
             </p>
 
-
         </div>
-
 
     </section>
 
 
-    <!-- ==================================================
-         SECTION 3
-         ================================================== -->
+    <!-- SECTION 3 -->
 
     <section
         class="section3"
@@ -1864,15 +1516,12 @@
     </section>
 
 
-    <!-- ==================================================
-         SECTION 4
-         ================================================== -->
+    <!-- SECTION 4 -->
 
     <section
         class="section4"
         id="section4"
     >
-
 
         <p class="countdown-heading">
             Our Wedding is in...
@@ -1880,7 +1529,6 @@
 
 
         <div class="countdown">
-
 
             <div class="countdown-unit">
 
@@ -1945,7 +1593,6 @@
 
             </div>
 
-
         </div>
 
 
@@ -1953,6 +1600,8 @@
             class="heart2"
             src="images/heart2.png"
             alt=""
+            loading="lazy"
+            decoding="async"
         >
 
 
@@ -1960,19 +1609,15 @@
             Save the Date!
         </p>
 
-
     </section>
 
 
-    <!-- ==================================================
-         SECTION 5
-         ================================================== -->
+    <!-- SECTION 5 -->
 
     <section
         class="section5"
         id="section5"
     >
-
 
         <p class="location-heading">
             FIND THE LOCATION
@@ -1983,31 +1628,29 @@
             class="location-arrow"
             src="images/arrow.png"
             alt=""
+            loading="lazy"
+            decoding="async"
         >
 
 
         <a
             class="location-link"
-            href="https://www.google.com/maps/place/%D8%AE%D8%A7%D9%86+%D8%A7%D9%84%D9%85%D9%86%D8%B5%D9%88%D8%B1%D9%8A%D8%A9+Khan+Al+Mansorya%E2%80%AD/@30.1236475,31.0632916,755m/data=!3m2!1e3!4b1!4m6!3m5!1s0x14585d006ca80e5f:0x706c2c2f4406dc5d!8m2!3d30.1236475!4d31.0658665!16s%2Fg%2F11wj3lzwny?entry=tts&g_ep=EgoyMDI2MDgxNy4wIPu8ASoASAFQAw%3D%3D&skid=536cbe0f-c3ac-40eb-ba6e-b85e2720f11a"
+            href="https://www.google.com/maps/place/%D8%AE%D8%A7%D9%86+%D8%A7%D9%84%D9%85%D9%86%D8%B5%D9%88%D8%B1%D9%8A%D8%A9+Khan+Al+Mansorya%E2%80%AD/@30.1236475,31.0632916,755m/data=!3m2!1e3!4b1!4m6!3m5!1s0x14585d006ca80e5f:0x706c2c2f4406dc5d!8m2!3d30.1236475!4d31.0658665!16s%2Fg%2F11wj3lzwny"
             target="_blank"
             rel="noopener noreferrer"
         >
             HERE
         </a>
 
-
     </section>
 
 
-    <!-- ==================================================
-         SECTION 6
-         ================================================== -->
+    <!-- SECTION 6 -->
 
     <section
         class="section6"
         id="section6"
     >
-
 
         <p class="final-message">
             Can't wait to see you!
@@ -2018,15 +1661,14 @@
             class="final-flowers"
             src="images/flowers.png"
             alt=""
+            loading="lazy"
+            decoding="async"
         >
-
 
     </section>
 
 
-    <!-- ==================================================
-         BACKGROUND MUSIC
-         ================================================== -->
+    <!-- MUSIC -->
 
     <audio
         id="weddingMusic"
@@ -2036,15 +1678,10 @@
     ></audio>
 
 
-    <!-- ==================================================
-         JAVASCRIPT
-         ================================================== -->
-
     <script>
 
-
         /* ==================================================
-           SECTION 1 TYPEWRITER
+           TYPEWRITER
            ================================================== */
 
         const text =
@@ -2052,29 +1689,33 @@
 
 
         const typingElement =
-            document.getElementById("tyingKnot");
+            document.getElementById(
+                "tyingKnot"
+            );
 
 
         let letterIndex = 0;
 
 
-        const typingSpeed = 110;
-        const startDelay = 700;
-
-
         function typeLetter() {
 
-            if (letterIndex < text.length) {
+            if (
+                letterIndex <
+                text.length
+            ) {
 
                 typingElement.textContent +=
-                    text.charAt(letterIndex);
+                    text.charAt(
+                        letterIndex
+                    );
+
 
                 letterIndex++;
 
 
                 setTimeout(
                     typeLetter,
-                    typingSpeed
+                    110
                 );
 
             }
@@ -2084,62 +1725,109 @@
 
         setTimeout(
             typeLetter,
-            startDelay
+            700
         );
 
 
         /* ==================================================
-           SECTION 2
+           OBSERVER HELPER
            ================================================== */
 
-        const section2 =
-            document.getElementById("section2");
+        function observeSection(
+            section,
+            threshold
+        ) {
+
+            const observer =
+                new IntersectionObserver(
+
+                    function(entries) {
+
+                        entries.forEach(
+
+                            function(entry) {
+
+                                if (
+                                    entry.isIntersecting
+                                ) {
+
+                                    section.classList.add(
+                                        "animate"
+                                    );
 
 
-        const section2Observer =
-            new IntersectionObserver(
+                                    observer.unobserve(
+                                        section
+                                    );
 
-                function(entries) {
+                                }
 
-                    entries.forEach(function(entry) {
+                            }
 
-                        if (entry.isIntersecting) {
+                        );
 
-                            section2.classList.add(
-                                "animate"
-                            );
+                    },
+
+                    {
+                        threshold: threshold
+                    }
+
+                );
 
 
-                            section2Observer.unobserve(
-                                section2
-                            );
-
-                        }
-
-                    });
-
-                },
-
-                {
-                    threshold: 0.25
-                }
-
+            observer.observe(
+                section
             );
 
+        }
 
-        section2Observer.observe(section2);
+
+        observeSection(
+            document.getElementById(
+                "section2"
+            ),
+            0.25
+        );
+
+
+        observeSection(
+            document.getElementById(
+                "section4"
+            ),
+            0.30
+        );
+
+
+        observeSection(
+            document.getElementById(
+                "section5"
+            ),
+            0.30
+        );
+
+
+        observeSection(
+            document.getElementById(
+                "section6"
+            ),
+            0.30
+        );
 
 
         /* ==================================================
-           SECTION 3
+           SECTION 3 LETTERS
            ================================================== */
 
         const section3 =
-            document.getElementById("section3");
+            document.getElementById(
+                "section3"
+            );
 
 
         const grownupsMessage =
-            document.getElementById("grownupsMessage");
+            document.getElementById(
+                "grownupsMessage"
+            );
 
 
         const grownupsText =
@@ -2156,10 +1844,14 @@
                 grownupsText.charAt(i);
 
 
-            if (character === " ") {
+            if (
+                character === " "
+            ) {
 
                 grownupsMessage.appendChild(
-                    document.createTextNode(" ")
+                    document.createTextNode(
+                        " "
+                    )
                 );
 
                 continue;
@@ -2168,20 +1860,25 @@
 
 
             const letter =
-                document.createElement("span");
+                document.createElement(
+                    "span"
+                );
 
 
             letter.textContent =
                 character;
 
 
-            const randomDrop =
-                -(10 + Math.random() * 30);
-
-
             letter.style.setProperty(
+
                 "--drop-distance",
-                randomDrop + "px"
+
+                -(
+                    10 +
+                    Math.random() * 30
+                ) +
+                "px"
+
             );
 
 
@@ -2197,52 +1894,65 @@
 
                 function(entries) {
 
-                    entries.forEach(function(entry) {
+                    entries.forEach(
 
-                        if (entry.isIntersecting) {
+                        function(entry) {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                const letters =
+                                    grownupsMessage
+                                        .querySelectorAll(
+                                            "span"
+                                        );
 
 
-                            const letters =
-                                grownupsMessage.querySelectorAll(
-                                    "span"
+                                letters.forEach(
+
+                                    function(
+                                        letter,
+                                        index
+                                    ) {
+
+                                        setTimeout(
+
+                                            function() {
+
+                                                letter
+                                                    .classList
+                                                    .add(
+                                                        "reveal"
+                                                    );
+
+                                            },
+
+                                            (
+                                                index * 25
+                                            ) +
+                                            (
+                                                Math.random() *
+                                                350
+                                            )
+
+                                        );
+
+                                    }
+
                                 );
 
 
-                            letters.forEach(
-
-                                function(letter, index) {
-
-                                    const randomDelay =
-                                        (index * 25) +
-                                        (Math.random() * 350);
-
-
-                                    setTimeout(
-
-                                        function() {
-
-                                            letter.classList.add(
-                                                "reveal"
-                                            );
-
-                                        },
-
-                                        randomDelay
-
+                                section3Observer
+                                    .unobserve(
+                                        section3
                                     );
 
-                                }
-
-                            );
-
-
-                            section3Observer.unobserve(
-                                section3
-                            );
+                            }
 
                         }
 
-                    });
+                    );
 
                 },
 
@@ -2253,11 +1963,13 @@
             );
 
 
-        section3Observer.observe(section3);
+        section3Observer.observe(
+            section3
+        );
 
 
         /* ==================================================
-           SECTION 4 COUNTDOWN
+           COUNTDOWN
            ================================================== */
 
         const weddingDate =
@@ -2266,42 +1978,16 @@
             );
 
 
-        const daysElement =
-            document.getElementById("days");
-
-
-        const hoursElement =
-            document.getElementById("hours");
-
-
-        const minutesElement =
-            document.getElementById("minutes");
-
-
-        const secondsElement =
-            document.getElementById("seconds");
-
-
         function updateCountdown() {
 
-
-            const now =
+            const difference =
+                weddingDate -
                 new Date();
 
 
-            const difference =
-                weddingDate - now;
-
-
-            if (difference <= 0) {
-
-                daysElement.textContent = "00";
-
-                hoursElement.textContent = "00";
-
-                minutesElement.textContent = "00";
-
-                secondsElement.textContent = "00";
+            if (
+                difference <= 0
+            ) {
 
                 return;
 
@@ -2311,7 +1997,7 @@
             const days =
                 Math.floor(
                     difference /
-                    (1000 * 60 * 60 * 24)
+                    86400000
                 );
 
 
@@ -2319,7 +2005,7 @@
                 Math.floor(
                     (
                         difference /
-                        (1000 * 60 * 60)
+                        3600000
                     ) % 24
                 );
 
@@ -2328,7 +2014,7 @@
                 Math.floor(
                     (
                         difference /
-                        (1000 * 60)
+                        60000
                     ) % 60
                 );
 
@@ -2342,32 +2028,44 @@
                 );
 
 
-            daysElement.textContent =
-                String(days).padStart(
-                    2,
-                    "0"
-                );
+            document.getElementById(
+                "days"
+            ).textContent =
+                String(days)
+                    .padStart(
+                        2,
+                        "0"
+                    );
 
 
-            hoursElement.textContent =
-                String(hours).padStart(
-                    2,
-                    "0"
-                );
+            document.getElementById(
+                "hours"
+            ).textContent =
+                String(hours)
+                    .padStart(
+                        2,
+                        "0"
+                    );
 
 
-            minutesElement.textContent =
-                String(minutes).padStart(
-                    2,
-                    "0"
-                );
+            document.getElementById(
+                "minutes"
+            ).textContent =
+                String(minutes)
+                    .padStart(
+                        2,
+                        "0"
+                    );
 
 
-            secondsElement.textContent =
-                String(seconds).padStart(
-                    2,
-                    "0"
-                );
+            document.getElementById(
+                "seconds"
+            ).textContent =
+                String(seconds)
+                    .padStart(
+                        2,
+                        "0"
+                    );
 
         }
 
@@ -2382,139 +2080,7 @@
 
 
         /* ==================================================
-           SECTION 4 OBSERVER
-           ================================================== */
-
-        const section4 =
-            document.getElementById("section4");
-
-
-        const section4Observer =
-            new IntersectionObserver(
-
-                function(entries) {
-
-                    entries.forEach(function(entry) {
-
-                        if (entry.isIntersecting) {
-
-                            section4.classList.add(
-                                "animate"
-                            );
-
-
-                            section4Observer.unobserve(
-                                section4
-                            );
-
-                        }
-
-                    });
-
-                },
-
-                {
-                    threshold: 0.30
-                }
-
-            );
-
-
-        section4Observer.observe(
-            section4
-        );
-
-
-        /* ==================================================
-           SECTION 5 OBSERVER
-           ================================================== */
-
-        const section5 =
-            document.getElementById("section5");
-
-
-        const section5Observer =
-            new IntersectionObserver(
-
-                function(entries) {
-
-                    entries.forEach(function(entry) {
-
-                        if (entry.isIntersecting) {
-
-                            section5.classList.add(
-                                "animate"
-                            );
-
-
-                            section5Observer.unobserve(
-                                section5
-                            );
-
-                        }
-
-                    });
-
-                },
-
-                {
-                    threshold: 0.30
-                }
-
-            );
-
-
-        section5Observer.observe(
-            section5
-        );
-
-
-        /* ==================================================
-           SECTION 6 OBSERVER
-           ================================================== */
-
-        const section6 =
-            document.getElementById("section6");
-
-
-        const section6Observer =
-            new IntersectionObserver(
-
-                function(entries) {
-
-                    entries.forEach(function(entry) {
-
-                        if (entry.isIntersecting) {
-
-                            section6.classList.add(
-                                "animate"
-                            );
-
-
-                            section6Observer.unobserve(
-                                section6
-                            );
-
-                        }
-
-                    });
-
-                },
-
-                {
-                    threshold: 0.30
-                }
-
-            );
-
-
-        section6Observer.observe(
-            section6
-        );
-
-
-        /* ==================================================
-           PAGE 2 BACKGROUND MUSIC
+           MUSIC RESUME
            ================================================== */
 
         const weddingMusic =
@@ -2523,41 +2089,9 @@
             );
 
 
-        weddingMusic.volume = 0.7;
+        weddingMusic.volume =
+            0.7;
 
-
-        /* ==================================================
-           START / RESUME MUSIC
-           ================================================== */
-
-        async function startWeddingMusic() {
-
-            try {
-
-                await weddingMusic.play();
-
-
-                sessionStorage.setItem(
-                    "weddingMusicStarted",
-                    "true"
-                );
-
-            }
-
-            catch (error) {
-
-                /*
-                   Browser may require interaction.
-                */
-
-            }
-
-        }
-
-
-        /* ==================================================
-           RESTORE MUSIC POSITION FROM PAGE 1
-           ================================================== */
 
         const savedMusicTime =
             sessionStorage.getItem(
@@ -2565,16 +2099,24 @@
             );
 
 
+        function playMusic() {
+
+            return weddingMusic.play();
+
+        }
+
+
         weddingMusic.addEventListener(
 
             "loadedmetadata",
 
-            async function() {
+            function() {
 
+                if (
+                    savedMusicTime !== null
+                ) {
 
-                if (savedMusicTime !== null) {
-
-                    const restoredTime =
+                    const restored =
                         parseFloat(
                             savedMusicTime
                         );
@@ -2582,19 +2124,21 @@
 
                     if (
                         Number.isFinite(
-                            restoredTime
+                            restored
                         )
                     ) {
 
                         weddingMusic.currentTime =
-                            restoredTime;
+                            restored;
 
                     }
 
                 }
 
 
-                await startWeddingMusic();
+                playMusic().catch(
+                    function() {}
+                );
 
             },
 
@@ -2605,42 +2149,40 @@
         );
 
 
-        /* ==================================================
-           MUSIC FALLBACK
-           ================================================== */
+        function unlockMusic() {
 
-        async function unlockWeddingMusic() {
+            playMusic()
+                .then(
 
-            await startWeddingMusic();
+                    function() {
 
+                        document.removeEventListener(
+                            "click",
+                            unlockMusic
+                        );
 
-            document.removeEventListener(
-                "pointerdown",
-                unlockWeddingMusic
-            );
+                    }
+
+                )
+                .catch(
+                    function() {}
+                );
 
         }
 
 
         document.addEventListener(
-            "pointerdown",
-            unlockWeddingMusic
+            "click",
+            unlockMusic
         );
 
-
-        /* ==================================================
-           SAVE MUSIC POSITION
-           ================================================== */
 
         setInterval(
 
             function() {
 
                 if (
-                    !weddingMusic.paused &&
-                    Number.isFinite(
-                        weddingMusic.currentTime
-                    )
+                    !weddingMusic.paused
                 ) {
 
                     sessionStorage.setItem(
@@ -2657,33 +2199,20 @@
         );
 
 
-        /* ==================================================
-           SAVE MUSIC WHEN LEAVING
-           ================================================== */
-
         window.addEventListener(
 
             "pagehide",
 
             function() {
 
-                if (
-                    Number.isFinite(
-                        weddingMusic.currentTime
-                    )
-                ) {
-
-                    sessionStorage.setItem(
-                        "weddingMusicTime",
-                        weddingMusic.currentTime
-                    );
-
-                }
+                sessionStorage.setItem(
+                    "weddingMusicTime",
+                    weddingMusic.currentTime
+                );
 
             }
 
         );
-
 
     </script>
 
