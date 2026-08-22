@@ -5,11 +5,14 @@
 
     <title>Omar & Nada - Wedding Invitation</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
 
     <!-- ==================================================
-         WEBSITE LINK PREVIEW / THUMBNAIL
+         WEBSITE LINK PREVIEW / OPEN GRAPH
          ================================================== -->
 
     <meta
@@ -28,13 +31,33 @@
     >
 
     <meta
+        property="og:site_name"
+        content="Omar & Nada"
+    >
+
+    <meta
         property="og:url"
-        content="https://omarandnada.github.io/"
+        content="https://omar-and-nada-wedding.github.io/Omar-Nada-s-Wedding/"
     >
 
     <meta
         property="og:image"
-        content="https://omarandnada.github.io/images/wedding-thumbnail.jpg"
+        content="https://omar-and-nada-wedding.github.io/Omar-Nada-s-Wedding/images/wedding-thumbnail.jpg?v=3"
+    >
+
+    <meta
+        property="og:image:url"
+        content="https://omar-and-nada-wedding.github.io/Omar-Nada-s-Wedding/images/wedding-thumbnail.jpg?v=3"
+    >
+
+    <meta
+        property="og:image:secure_url"
+        content="https://omar-and-nada-wedding.github.io/Omar-Nada-s-Wedding/images/wedding-thumbnail.jpg?v=3"
+    >
+
+    <meta
+        property="og:image:type"
+        content="image/jpeg"
     >
 
     <meta
@@ -74,7 +97,13 @@
 
     <meta
         name="twitter:image"
-        content="https://omarandnada.github.io/images/wedding-thumbnail.jpg"
+        content="https://omar-and-nada-wedding.github.io/Omar-Nada-s-Wedding/images/wedding-thumbnail.jpg?v=3"
+    >
+
+
+    <link
+        rel="canonical"
+        href="https://omar-and-nada-wedding.github.io/Omar-Nada-s-Wedding/"
     >
 
 
@@ -90,6 +119,7 @@
             font-weight: normal;
             font-style: normal;
         }
+
 
         @font-face {
             font-family: "Blastine";
@@ -107,15 +137,19 @@
             box-sizing: border-box;
         }
 
+
         html,
         body {
             margin: 0;
             padding: 0;
+
             width: 100%;
         }
 
+
         body {
             background-color: black;
+
             overflow-x: hidden;
         }
 
@@ -149,6 +183,9 @@
            ANIMATIONS
            ================================================== */
 
+
+        /* OMAR */
+
         @keyframes omarEnter {
 
             from {
@@ -159,6 +196,7 @@
                     -50%
                 );
             }
+
 
             to {
                 opacity: 1;
@@ -171,6 +209,8 @@
 
         }
 
+
+        /* NADA */
 
         @keyframes nadaEnter {
 
@@ -183,6 +223,7 @@
                 );
             }
 
+
             to {
                 opacity: 1;
 
@@ -195,6 +236,8 @@
         }
 
 
+        /* AMPERSAND */
+
         @keyframes ampersandEnter {
 
             from {
@@ -205,6 +248,7 @@
                     calc(-50% - 80px)
                 );
             }
+
 
             to {
                 opacity: 1;
@@ -218,6 +262,8 @@
         }
 
 
+        /* ANNOUNCEMENT */
+
         @keyframes announcementReveal {
 
             from {
@@ -227,6 +273,7 @@
                     0 100% 0 0
                 );
             }
+
 
             to {
                 opacity: 1;
@@ -239,6 +286,8 @@
         }
 
 
+        /* NEXT BUTTON */
+
         @keyframes buttonEnter {
 
             from {
@@ -249,6 +298,7 @@
                     -50%
                 );
             }
+
 
             to {
                 opacity: 1;
@@ -426,15 +476,18 @@
 
 
         .next-button img {
+            display: block;
+
             width: 100%;
             height: auto;
-
-            display: block;
         }
 
 
         /* ==================================================
-           OPEN-INVITATION OVERLAY
+           OPEN INVITATION OVERLAY
+
+           Desktop: hidden
+           Phone: shown
            ================================================== */
 
         .open-overlay {
@@ -448,6 +501,10 @@
 
         @media (max-width: 600px) {
 
+
+            /* REMOVE BLACK BLOCK */
+
+            html,
             body {
                 background-color: white;
             }
@@ -460,6 +517,8 @@
             }
 
 
+            /* OMAR */
+
             .omar {
                 top: 44.5%;
                 left: 22%;
@@ -467,6 +526,8 @@
                 font-size: 9vw;
             }
 
+
+            /* AMPERSAND */
 
             .ampersand {
                 top: 48%;
@@ -476,6 +537,8 @@
             }
 
 
+            /* NADA */
+
             .nada {
                 top: 53%;
                 left: 50.5%;
@@ -483,6 +546,8 @@
                 font-size: 9vw;
             }
 
+
+            /* ANNOUNCEMENT */
 
             .announcement {
                 top: 64%;
@@ -494,9 +559,11 @@
             }
 
 
+            /* NEXT */
+
             .next-button {
                 top: 82%;
-                left: 50%;
+                left: 70%;
 
                 width: 8%;
             }
@@ -518,11 +585,16 @@
                 align-items: center;
                 justify-content: center;
 
+                width: 100%;
+                min-height: 100dvh;
+
                 background-color: white;
 
                 opacity: 1;
 
                 cursor: pointer;
+
+                -webkit-tap-highlight-color: transparent;
 
                 transition:
                     opacity
@@ -550,11 +622,14 @@
 
                 font-size: 7vw;
 
-                line-height: 1.3;
+                line-height: 1.35;
 
                 letter-spacing: 0.08em;
 
                 text-align: center;
+
+                user-select: none;
+                -webkit-user-select: none;
             }
 
 
@@ -610,6 +685,9 @@
     <div
         class="open-overlay"
         id="openOverlay"
+        role="button"
+        tabindex="0"
+        aria-label="Tap to open the invitation"
     >
 
         <div class="open-overlay-content">
@@ -738,7 +816,7 @@
 
 
         /* ==================================================
-           RESTORE PREVIOUS MUSIC POSITION
+           RESTORE SAVED MUSIC POSITION
            ================================================== */
 
         const savedMusicTime =
@@ -789,33 +867,15 @@
            START MUSIC
            ================================================== */
 
-        async function startWeddingMusic() {
+        function startWeddingMusic() {
 
-            try {
-
-                await weddingMusic.play();
-
-
-                sessionStorage.setItem(
-                    "weddingMusicStarted",
-                    "true"
-                );
-
-            }
-
-            catch (error) {
-
-                console.log(
-                    "Waiting for user interaction before playing audio."
-                );
-
-            }
+            return weddingMusic.play();
 
         }
 
 
         /* ==================================================
-           DESKTOP AUTOPLAY
+           DESKTOP AUTOPLAY ATTEMPT
            ================================================== */
 
         if (
@@ -824,87 +884,155 @@
             ).matches
         ) {
 
-            startWeddingMusic();
+            startWeddingMusic().catch(
+
+                function() {
+
+                    /*
+                       Browser requires interaction.
+                    */
+
+                }
+
+            );
 
         }
 
 
         /* ==================================================
-           PHONE TAP TO OPEN
+           MOBILE OPEN INVITATION
+
+           IMPORTANT:
+           play() is called DIRECTLY from click.
+           Overlay only disappears AFTER playback succeeds.
            ================================================== */
 
-        let invitationOpened = false;
+        let invitationIsOpening = false;
 
 
-        async function openInvitation() {
+        function openInvitation() {
 
-            if (invitationOpened) {
+
+            if (invitationIsOpening) {
+
                 return;
+
             }
 
 
-            invitationOpened = true;
+            invitationIsOpening = true;
 
 
-            await startWeddingMusic();
+            /*
+               The call to play() happens synchronously
+               inside the user's click event.
+            */
+
+            const playRequest =
+                startWeddingMusic();
 
 
-            openOverlay.classList.add(
-                "hidden"
-            );
+            if (
+                playRequest !== undefined
+            ) {
+
+                playRequest
+                    .then(
+
+                        function() {
 
 
-            setTimeout(
+                            sessionStorage.setItem(
+                                "weddingMusicStarted",
+                                "true"
+                            );
 
-                function() {
 
-                    openOverlay.style.display =
-                        "none";
+                            openOverlay.classList.add(
+                                "hidden"
+                            );
 
-                },
 
-                650
+                            setTimeout(
 
-            );
+                                function() {
+
+                                    openOverlay.style.display =
+                                        "none";
+
+                                },
+
+                                650
+
+                            );
+
+                        }
+
+                    )
+                    .catch(
+
+                        function(error) {
+
+
+                            /*
+                               Keep overlay visible so
+                               visitor can tap again.
+                            */
+
+                            invitationIsOpening = false;
+
+
+                            console.log(
+                                "Music start was blocked:",
+                                error
+                            );
+
+                        }
+
+                    );
+
+            }
 
         }
 
 
         if (openOverlay) {
 
-
             /*
-               Mobile:
-               music starts as soon as the
-               finger touches the opening screen.
+               ONE event only.
+
+               No touchstart.
+               No pointerup.
+               No competing event handlers.
             */
 
             openOverlay.addEventListener(
-
-                "touchstart",
-
-                openInvitation,
-
-                {
-                    once: true,
-                    passive: true
-                }
-
+                "click",
+                openInvitation
             );
 
 
             /*
-               Desktop / browser fallback.
+               Keyboard accessibility.
             */
 
             openOverlay.addEventListener(
 
-                "click",
+                "keydown",
 
-                openInvitation,
+                function(event) {
 
-                {
-                    once: true
+                    if (
+                        event.key === "Enter" ||
+                        event.key === " "
+                    ) {
+
+                        event.preventDefault();
+
+                        openInvitation();
+
+                    }
+
                 }
 
             );
@@ -922,23 +1050,32 @@
             ).matches
         ) {
 
-            document.addEventListener(
-
-                "pointerup",
-
-                function desktopMusicUnlock() {
+            function desktopMusicUnlock() {
 
 
-                    startWeddingMusic();
+                startWeddingMusic()
+                    .then(
 
+                        function() {
 
-                    document.removeEventListener(
-                        "pointerup",
-                        desktopMusicUnlock
+                            document.removeEventListener(
+                                "click",
+                                desktopMusicUnlock
+                            );
+
+                        }
+
+                    )
+                    .catch(
+                        function() {}
                     );
 
-                }
+            }
 
+
+            document.addEventListener(
+                "click",
+                desktopMusicUnlock
             );
 
         }
@@ -975,7 +1112,7 @@
 
 
         /* ==================================================
-           NEXT BUTTON
+           NEXT PAGE BUTTON
            ================================================== */
 
         if (nextButton) {
@@ -1007,7 +1144,7 @@
 
 
         /* ==================================================
-           SAVE MUSIC WHEN PAGE CLOSES
+           SAVE MUSIC WHEN LEAVING PAGE
            ================================================== */
 
         window.addEventListener(
