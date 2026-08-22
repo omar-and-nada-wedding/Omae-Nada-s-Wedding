@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Omar & Nada - Wedding Invitation</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+
+        /* ==================================================
+           FONTS
+           ================================================== */
+
+        @font-face {
+            font-family: "Dream Avenue";
+            src: url("fonts/dream-avenue.woff") format("woff");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: "Blastine";
+            src: url("fonts/Blastine.woff") format("woff");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        /* ==================================================
+           WHOLE PAGE
+           ================================================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        body {
+            background-color: black;
+            overflow-x: hidden;
+        }
+
+
+        /* ==================================================
+           PAGE 1
+           ================================================== */
+
+        .page1 {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+
+        /* ==================================================
+           MAIN PHOTO
+           ================================================== */
+
+        .page1 > img:first-child {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+
+        /* ==================================================
+           ANIMATIONS
+           ================================================== */
+
+        @keyframes omarEnter {
+
+            from {
+                opacity: 0;
+
+                transform: translate(
+                    -80px,
+                    -50%
+                );
+            }
+
+            to {
+                opacity: 1;
+
+                transform: translate(
+                    0,
+                    -50%
+                );
+            }
+
+        }
+
+
+        @keyframes nadaEnter {
+
+            from {
+                opacity: 0;
+
+                transform: translate(
+                    80px,
+                    -50%
+                );
+            }
+
+            to {
+                opacity: 1;
+
+                transform: translate(
+                    0,
+                    -50%
+                );
+            }
+
+        }
+
+
+        @keyframes ampersandEnter {
+
+            from {
+                opacity: 0;
+
+                transform: translate(
+                    -50%,
+                    calc(-50% - 80px)
+                );
+            }
+
+            to {
+                opacity: 1;
+
+                transform: translate(
+                    -50%,
+                    -50%
+                );
+            }
+
+        }
+
+
+        @keyframes announcementReveal {
+
+            from {
+                opacity: 0;
+
+                clip-path: inset(
+                    0 100% 0 0
+                );
+            }
+
+            to {
+                opacity: 1;
+
+                clip-path: inset(
+                    0 0 0 0
+                );
+            }
+
+        }
+
+
+        @keyframes buttonEnter {
+
+            from {
+                opacity: 0;
+
+                transform: translate(
+                    calc(-50% - 80px),
+                    -50%
+                );
+            }
+
+            to {
+                opacity: 1;
+
+                transform: translate(
+                    -50%,
+                    -50%
+                );
+            }
+
+        }
+
+
+        /* ==================================================
+           SHARED NAME STYLE
+           ================================================== */
+
+        .omar,
+        .nada {
+            position: absolute;
+
+            margin: 0;
+
+            color: white;
+
+            font-family: "Dream Avenue", serif;
+            font-weight: normal;
+
+            line-height: 1;
+
+            text-transform: uppercase;
+        }
+
+
+        /* ==================================================
+           OMAR
+           ================================================== */
+
+        .omar {
+            top: 44.5%;
+            left: 22%;
+
+            transform: translateY(-50%);
+
+            font-size: clamp(
+                58px,
+                9vw,
+                140px
+            );
+
+            animation:
+                omarEnter
+                1.5s
+                ease-out
+                0.4s
+                both;
+        }
+
+
+        /* ==================================================
+           AMPERSAND
+           ================================================== */
+
+        .ampersand {
+            position: absolute;
+
+            top: 48%;
+            left: 49%;
+
+            transform: translate(-50%, -50%);
+
+            width: 7%;
+            height: auto;
+
+            animation:
+                ampersandEnter
+                1.5s
+                ease-out
+                0.4s
+                both;
+        }
+
+
+        /* ==================================================
+           NADA
+           ================================================== */
+
+        .nada {
+            top: 53%;
+            left: 50.5%;
+
+            transform: translateY(-50%);
+
+            font-size: clamp(
+                58px,
+                9vw,
+                140px
+            );
+
+            animation:
+                nadaEnter
+                1.5s
+                ease-out
+                0.4s
+                both;
+        }
+
+
+        /* ==================================================
+           ANNOUNCEMENT
+           ================================================== */
+
+        .announcement {
+            position: absolute;
+
+            top: 64%;
+            left: 14%;
+
+            transform: translateY(-50%);
+
+            width: 70%;
+
+            color: white;
+
+            text-align: left;
+
+            font-family: "Blastine", cursive;
+            font-weight: normal;
+
+            font-size: clamp(
+                58px,
+                9vw,
+                140px
+            );
+
+            white-space: nowrap;
+
+            animation:
+                announcementReveal
+                2s
+                ease-out
+                1s
+                both;
+        }
+
+
+        .announcement p {
+            margin: 0;
+        }
+
+
+        /* ==================================================
+           NEXT PAGE BUTTON
+           ================================================== */
+
+        .next-button {
+            position: absolute;
+
+            top: 82%;
+            left: 80%;
+
+            transform: translate(-50%, -50%);
+
+            width: 5%;
+
+            cursor: pointer;
+
+            animation:
+                buttonEnter
+                2s
+                ease-out
+                1.5s
+                both;
+        }
+
+
+        .next-button img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+
+        /* ==================================================
+           PHONE VERSION
+           ================================================== */
+
+        @media (max-width: 600px) {
+
+            .page1 {
+                width: 100%;
+            }
+
+
+            .omar {
+                top: 44.5%;
+                left: 22%;
+
+                font-size: 9vw;
+            }
+
+
+            .ampersand {
+                top: 48%;
+                left: 49%;
+
+                width: 7%;
+            }
+
+
+            .nada {
+                top: 53%;
+                left: 50.5%;
+
+                font-size: 9vw;
+            }
+
+
+            .announcement {
+                top: 64%;
+                left: 14%;
+
+                width: 70%;
+
+                font-size: 9vw;
+            }
+
+
+            .next-button {
+                top: 82%;
+                left: 50%;
+
+                width: 8%;
+            }
+
+        }
+
+
+        /* ==================================================
+           EXTRA SMALL PHONES
+           ================================================== */
+
+        @media (max-width: 380px) {
+
+            .omar,
+            .nada {
+                font-size: 8.7vw;
+            }
+
+
+            .announcement {
+                font-size: 8.7vw;
+            }
+
+
+            .next-button {
+                width: 9%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         PAGE 1
+         ================================================== -->
+
+    <section
+        class="page1"
+        id="page1"
+    >
+
+
+        <!-- MAIN PHOTO -->
+
+        <img
+            src="images/couple.jpg"
+            alt="Omar and Nada"
+        >
+
+
+        <!-- OMAR -->
+
+        <h1 class="omar">
+            OMAR
+        </h1>
+
+
+        <!-- AMPERSAND -->
+
+        <img
+            class="ampersand"
+            src="images/ampersand.png"
+            alt="&"
+        >
+
+
+        <!-- NADA -->
+
+        <h1 class="nada">
+            NADA
+        </h1>
+
+
+        <!-- ANNOUNCEMENT -->
+
+        <div class="announcement">
+
+            <p>
+                We are Happy to Announce
+            </p>
+
+        </div>
+
+
+        <!-- NEXT PAGE BUTTON -->
+
+        <a
+            href="page2.html"
+            class="next-button"
+        >
+
+            <img
+                src="images/next-button.png"
+                alt="Continue to invitation"
+            >
+
+        </a>
+
+
+    </section>
+
+
+    <!-- ==================================================
+         BACKGROUND MUSIC
+         ================================================== -->
+
+    <audio
+        id="weddingMusic"
+        src="music/wedding-music.mp3"
+        preload="auto"
+        loop
+    ></audio>
+
+
+    <!-- ==================================================
+         JAVASCRIPT
+         ================================================== -->
+
+    <script>
+
+
+        /* ==================================================
+           MUSIC SETUP
+           ================================================== */
+
+        const weddingMusic =
+            document.getElementById(
+                "weddingMusic"
+            );
+
+
+        weddingMusic.volume = 0.7;
+
+
+        /* ==================================================
+           RESTORE SAVED MUSIC POSITION
+           ================================================== */
+
+        const savedMusicTime =
+            sessionStorage.getItem(
+                "weddingMusicTime"
+            );
+
+
+        weddingMusic.addEventListener(
+
+            "loadedmetadata",
+
+            function() {
+
+                if (savedMusicTime !== null) {
+
+                    const restoredTime =
+                        parseFloat(
+                            savedMusicTime
+                        );
+
+
+                    if (
+                        Number.isFinite(
+                            restoredTime
+                        )
+                    ) {
+
+                        weddingMusic.currentTime =
+                            restoredTime;
+
+                    }
+
+                }
+
+            },
+
+            {
+                once: true
+            }
+
+        );
+
+
+        /* ==================================================
+           START MUSIC
+           ================================================== */
+
+        async function startWeddingMusic() {
+
+            try {
+
+                await weddingMusic.play();
+
+
+                sessionStorage.setItem(
+                    "weddingMusicStarted",
+                    "true"
+                );
+
+            }
+
+            catch (error) {
+
+                /*
+                   Browser blocked automatic
+                   audible playback.
+
+                   The first click or touch
+                   will unlock it.
+                */
+
+            }
+
+        }
+
+
+        /* Try autoplay */
+
+        startWeddingMusic();
+
+
+        /* ==================================================
+           FIRST USER INTERACTION
+           ================================================== */
+
+        async function unlockWeddingMusic() {
+
+            await startWeddingMusic();
+
+
+            document.removeEventListener(
+                "pointerdown",
+                unlockWeddingMusic
+            );
+
+        }
+
+
+        document.addEventListener(
+            "pointerdown",
+            unlockWeddingMusic
+        );
+
+
+        /* ==================================================
+           SAVE MUSIC POSITION CONTINUOUSLY
+           ================================================== */
+
+        setInterval(
+
+            function() {
+
+                if (
+                    !weddingMusic.paused &&
+                    Number.isFinite(
+                        weddingMusic.currentTime
+                    )
+                ) {
+
+                    sessionStorage.setItem(
+                        "weddingMusicTime",
+                        weddingMusic.currentTime
+                    );
+
+                }
+
+            },
+
+            200
+
+        );
+
+
+        /* ==================================================
+           NEXT PAGE BUTTON
+
+           Start music before opening Page 2,
+           then save the exact playback position.
+           ================================================== */
+
+        const nextButton =
+            document.querySelector(
+                ".next-button"
+            );
+
+
+        if (nextButton) {
+
+            nextButton.addEventListener(
+
+                "click",
+
+                async function(event) {
+
+                    event.preventDefault();
+
+
+                    /*
+                       Button click counts as a
+                       user interaction, so this
+                       can unlock audio if needed.
+                    */
+
+                    await startWeddingMusic();
+
+
+                    sessionStorage.setItem(
+                        "weddingMusicTime",
+                        weddingMusic.currentTime
+                    );
+
+
+                    /*
+                       Tiny delay allows playback
+                       state to settle before
+                       loading the second page.
+                    */
+
+                    setTimeout(
+
+                        function() {
+
+                            window.location.href =
+                                "page2.html";
+
+                        },
+
+                        120
+
+                    );
+
+                }
+
+            );
+
+        }
+
+
+        /* ==================================================
+           SAVE WHEN LEAVING PAGE
+           ================================================== */
+
+        window.addEventListener(
+
+            "pagehide",
+
+            function() {
+
+                if (
+                    Number.isFinite(
+                        weddingMusic.currentTime
+                    )
+                ) {
+
+                    sessionStorage.setItem(
+                        "weddingMusicTime",
+                        weddingMusic.currentTime
+                    );
+
+                }
+
+            }
+
+        );
+
+
+    </script>
+
+
+</body>
+
+</html>
