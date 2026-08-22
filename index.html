@@ -5,16 +5,16 @@
 
     <meta charset="UTF-8">
 
-    <title>Omar & Nada - Wedding Invitation</title>
-
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0"
     >
 
+    <title>Omar & Nada - Wedding Invitation</title>
+
 
     <!-- ==================================================
-         WEBSITE LINK PREVIEW / THUMBNAIL
+         WEBSITE THUMBNAIL / LINK PREVIEW
          ================================================== -->
 
     <meta
@@ -73,7 +73,7 @@
     >
 
 
-    <!-- TWITTER / X -->
+    <!-- TWITTER / X PREVIEW -->
 
     <meta
         name="twitter:card"
@@ -103,7 +103,7 @@
 
 
     <!-- ==================================================
-         PRELOAD PAGE 1 CRITICAL ASSETS
+         PRELOAD IMPORTANT PAGE 1 ASSETS
          ================================================== -->
 
     <link
@@ -137,75 +137,11 @@
     >
 
 
-    <!-- ==================================================
-         PREPARE PAGE 2 IN BACKGROUND
-         ================================================== -->
+    <!-- PREPARE PAGE 2 -->
 
     <link
         rel="prefetch"
         href="page2.html"
-    >
-
-    <link
-        rel="prefetch"
-        href="images/couple2.jpg"
-        as="image"
-    >
-
-    <link
-        rel="prefetch"
-        href="images/heart1.png"
-        as="image"
-    >
-
-    <link
-        rel="prefetch"
-        href="images/heart2.png"
-        as="image"
-    >
-
-    <link
-        rel="prefetch"
-        href="images/wedding-rings.png"
-        as="image"
-    >
-
-    <link
-        rel="prefetch"
-        href="images/flowers.png"
-        as="image"
-    >
-
-    <link
-        rel="prefetch"
-        href="fonts/The-something-script.woff"
-        as="font"
-        type="font/woff"
-        crossorigin
-    >
-
-    <link
-        rel="prefetch"
-        href="fonts/Ovo.woff"
-        as="font"
-        type="font/woff"
-        crossorigin
-    >
-
-    <link
-        rel="prefetch"
-        href="fonts/della-respira.woff"
-        as="font"
-        type="font/woff"
-        crossorigin
-    >
-
-    <link
-        rel="prefetch"
-        href="fonts/PlayfairDisplay-Regular.ttf"
-        as="font"
-        type="font/ttf"
-        crossorigin
     >
 
 
@@ -223,6 +159,7 @@
             font-display: swap;
         }
 
+
         @font-face {
             font-family: "Blastine";
             src: url("fonts/Blastine.woff") format("woff");
@@ -233,22 +170,26 @@
 
 
         /* ==================================================
-           WHOLE PAGE
+           RESET
            ================================================== */
 
         * {
             box-sizing: border-box;
         }
 
+
         html,
         body {
             margin: 0;
             padding: 0;
+
             width: 100%;
+
+            background-color: black;
         }
 
+
         body {
-            background-color: black;
             overflow-x: hidden;
         }
 
@@ -259,13 +200,18 @@
 
         .page1 {
             position: relative;
+
             width: 100%;
+
             overflow: hidden;
         }
 
 
-        .page1 > img:first-child {
+        /* MAIN PHOTO */
+
+        .page1 > .main-photo {
             display: block;
+
             width: 100%;
             height: auto;
         }
@@ -279,12 +225,16 @@
 
             from {
                 opacity: 0;
-                transform: translate(-80px, -50%);
+
+                transform:
+                    translate(-80px, -50%);
             }
 
             to {
                 opacity: 1;
-                transform: translate(0, -50%);
+
+                transform:
+                    translate(0, -50%);
             }
 
         }
@@ -294,12 +244,16 @@
 
             from {
                 opacity: 0;
-                transform: translate(80px, -50%);
+
+                transform:
+                    translate(80px, -50%);
             }
 
             to {
                 opacity: 1;
-                transform: translate(0, -50%);
+
+                transform:
+                    translate(0, -50%);
             }
 
         }
@@ -310,15 +264,18 @@
             from {
                 opacity: 0;
 
-                transform: translate(
-                    -50%,
-                    calc(-50% - 80px)
-                );
+                transform:
+                    translate(
+                        -50%,
+                        calc(-50% - 80px)
+                    );
             }
 
             to {
                 opacity: 1;
-                transform: translate(-50%, -50%);
+
+                transform:
+                    translate(-50%, -50%);
             }
 
         }
@@ -328,12 +285,16 @@
 
             from {
                 opacity: 0;
-                clip-path: inset(0 100% 0 0);
+
+                clip-path:
+                    inset(0 100% 0 0);
             }
 
             to {
                 opacity: 1;
-                clip-path: inset(0 0 0 0);
+
+                clip-path:
+                    inset(0 0 0 0);
             }
 
         }
@@ -344,22 +305,25 @@
             from {
                 opacity: 0;
 
-                transform: translate(
-                    calc(-50% - 80px),
-                    -50%
-                );
+                transform:
+                    translate(
+                        calc(-50% - 80px),
+                        -50%
+                    );
             }
 
             to {
                 opacity: 1;
-                transform: translate(-50%, -50%);
+
+                transform:
+                    translate(-50%, -50%);
             }
 
         }
 
 
         /* ==================================================
-           NAMES
+           OMAR + NADA
            ================================================== */
 
         .omar,
@@ -370,7 +334,10 @@
 
             color: white;
 
-            font-family: "Dream Avenue", serif;
+            font-family:
+                "Dream Avenue",
+                serif;
+
             font-weight: normal;
 
             line-height: 1;
@@ -383,32 +350,18 @@
             top: 44.5%;
             left: 22%;
 
-            transform: translateY(-50%);
+            transform:
+                translateY(-50%);
 
-            font-size: clamp(58px, 9vw, 140px);
+            font-size:
+                clamp(
+                    58px,
+                    9vw,
+                    140px
+                );
 
             animation:
                 omarEnter
-                1.5s
-                ease-out
-                0.4s
-                both;
-        }
-
-
-        .ampersand {
-            position: absolute;
-
-            top: 48%;
-            left: 49%;
-
-            transform: translate(-50%, -50%);
-
-            width: 7%;
-            height: auto;
-
-            animation:
-                ampersandEnter
                 1.5s
                 ease-out
                 0.4s
@@ -420,12 +373,43 @@
             top: 53%;
             left: 50.5%;
 
-            transform: translateY(-50%);
+            transform:
+                translateY(-50%);
 
-            font-size: clamp(58px, 9vw, 140px);
+            font-size:
+                clamp(
+                    58px,
+                    9vw,
+                    140px
+                );
 
             animation:
                 nadaEnter
+                1.5s
+                ease-out
+                0.4s
+                both;
+        }
+
+
+        /* ==================================================
+           AMPERSAND
+           ================================================== */
+
+        .ampersand {
+            position: absolute;
+
+            top: 48%;
+            left: 49%;
+
+            transform:
+                translate(-50%, -50%);
+
+            width: 7%;
+            height: auto;
+
+            animation:
+                ampersandEnter
                 1.5s
                 ease-out
                 0.4s
@@ -443,7 +427,8 @@
             top: 64%;
             left: 14%;
 
-            transform: translateY(-50%);
+            transform:
+                translateY(-50%);
 
             width: 70%;
 
@@ -451,10 +436,18 @@
 
             text-align: left;
 
-            font-family: "Blastine", cursive;
+            font-family:
+                "Blastine",
+                cursive;
+
             font-weight: normal;
 
-            font-size: clamp(58px, 9vw, 140px);
+            font-size:
+                clamp(
+                    58px,
+                    9vw,
+                    140px
+                );
 
             white-space: nowrap;
 
@@ -482,11 +475,14 @@
             top: 82%;
             left: 80%;
 
-            transform: translate(-50%, -50%);
+            transform:
+                translate(-50%, -50%);
 
             width: 5%;
 
             cursor: pointer;
+
+            z-index: 20;
 
             animation:
                 buttonEnter
@@ -506,7 +502,7 @@
 
 
         /* ==================================================
-           OPEN OVERLAY
+           TAP TO OPEN OVERLAY
            ================================================== */
 
         .open-overlay {
@@ -515,10 +511,11 @@
 
 
         /* ==================================================
-           PHONE
+           MOBILE VERSION
            ================================================== */
 
         @media (max-width: 600px) {
+
 
             html,
             body {
@@ -526,17 +523,23 @@
                 padding: 0;
 
                 width: 100%;
-                height: 100%;
+                min-height: 100%;
 
                 background-color: black;
             }
 
+
+            /* ==============================================
+               FULL MOBILE SCREEN
+               ============================================== */
 
             .page1 {
                 position: relative;
 
                 width: 100%;
 
+                height: 100vh;
+                height: 100svh;
                 height: 100dvh;
 
                 overflow: hidden;
@@ -545,23 +548,31 @@
             }
 
 
-            /* FULL MOBILE PHOTO */
+            /* ==============================================
+               PHOTO FILLS ENTIRE PHONE
+               ============================================== */
 
-            .page1 > img:first-child {
+            .page1 > .main-photo {
                 position: absolute;
 
-                inset: 0;
+                top: 0;
+                left: 0;
 
                 width: 100%;
                 height: 100%;
 
-                display: block;
-
                 object-fit: cover;
 
-                object-position: center center;
+                object-position:
+                    center center;
+
+                display: block;
             }
 
+
+            /* ==============================================
+               MOBILE OMAR
+               ============================================== */
 
             .omar {
                 top: 44.5%;
@@ -571,6 +582,10 @@
             }
 
 
+            /* ==============================================
+               MOBILE AMPERSAND
+               ============================================== */
+
             .ampersand {
                 top: 48%;
                 left: 49%;
@@ -579,6 +594,10 @@
             }
 
 
+            /* ==============================================
+               MOBILE NADA
+               ============================================== */
+
             .nada {
                 top: 53%;
                 left: 50.5%;
@@ -586,6 +605,10 @@
                 font-size: 9vw;
             }
 
+
+            /* ==============================================
+               MOBILE ANNOUNCEMENT
+               ============================================== */
 
             .announcement {
                 top: 64%;
@@ -597,19 +620,28 @@
             }
 
 
-            /* MOBILE BUTTON */
+            /* ==============================================
+               MOBILE NEXT BUTTON
+
+               EDIT THESE VALUES IF YOU WANT TO MOVE IT:
+
+               top  = up/down
+               left = left/right
+               ============================================== */
 
             .next-button {
                 top: 86%;
                 left: 84%;
 
                 width: 8%;
+
+                z-index: 30;
             }
 
 
-            /* ==================================================
-               TAP TO OPEN
-               ================================================== */
+            /* ==============================================
+               TAP TO OPEN OVERLAY
+               ============================================== */
 
             .open-overlay {
                 position: fixed;
@@ -624,6 +656,9 @@
                 justify-content: center;
 
                 width: 100%;
+
+                height: 100vh;
+                height: 100svh;
                 height: 100dvh;
 
                 background-color: white;
@@ -632,7 +667,8 @@
 
                 cursor: pointer;
 
-                -webkit-tap-highlight-color: transparent;
+                -webkit-tap-highlight-color:
+                    transparent;
 
                 transition:
                     opacity
@@ -655,7 +691,10 @@
 
                 color: #5a5b5e;
 
-                font-family: "Dream Avenue", serif;
+                font-family:
+                    "Dream Avenue",
+                    serif;
+
                 font-weight: normal;
 
                 font-size: 7vw;
@@ -667,7 +706,9 @@
                 text-align: center;
 
                 user-select: none;
-                -webkit-user-select: none;
+
+                -webkit-user-select:
+                    none;
             }
 
 
@@ -679,6 +720,10 @@
 
         }
 
+
+        /* ==================================================
+           EXTRA SMALL PHONES
+           ================================================== */
 
         @media (max-width: 380px) {
 
@@ -716,7 +761,7 @@
 
 
     <!-- ==================================================
-         TAP TO OPEN
+         MOBILE TAP TO OPEN
          ================================================== -->
 
     <div
@@ -724,6 +769,7 @@
         id="openOverlay"
         role="button"
         tabindex="0"
+        aria-label="Tap to open the invitation"
     >
 
         <div class="open-overlay-content">
@@ -747,31 +793,40 @@
     >
 
 
+        <!-- MAIN PHOTO -->
+
         <img
+            class="main-photo"
             src="images/couple.jpg"
             alt="Omar and Nada"
             fetchpriority="high"
-            decoding="async"
         >
 
+
+        <!-- OMAR -->
 
         <h1 class="omar">
             OMAR
         </h1>
 
 
+        <!-- AMPERSAND -->
+
         <img
             class="ampersand"
             src="images/ampersand.png"
             alt="&"
-            decoding="async"
         >
 
+
+        <!-- NADA -->
 
         <h1 class="nada">
             NADA
         </h1>
 
+
+        <!-- ANNOUNCEMENT -->
 
         <div class="announcement">
 
@@ -782,15 +837,18 @@
         </div>
 
 
+        <!-- NEXT BUTTON -->
+
         <a
             href="page2.html"
             class="next-button"
+            id="nextButton"
+            aria-label="Continue to invitation"
         >
 
             <img
                 src="images/next-button.png"
-                alt="Continue to invitation"
-                decoding="async"
+                alt=""
             >
 
         </a>
@@ -800,7 +858,7 @@
 
 
     <!-- ==================================================
-         MUSIC
+         WEDDING MUSIC
          ================================================== -->
 
     <audio
@@ -810,6 +868,10 @@
         loop
     ></audio>
 
+
+    <!-- ==================================================
+         JAVASCRIPT
+         ================================================== -->
 
     <script>
 
@@ -826,8 +888,8 @@
 
 
         const nextButton =
-            document.querySelector(
-                ".next-button"
+            document.getElementById(
+                "nextButton"
             );
 
 
@@ -848,9 +910,11 @@
 
             "loadedmetadata",
 
-            function() {
+            function () {
 
-                if (savedMusicTime !== null) {
+                if (
+                    savedMusicTime !== null
+                ) {
 
                     const restoredTime =
                         parseFloat(
@@ -881,7 +945,7 @@
 
 
         /* ==================================================
-           MUSIC
+           START MUSIC
            ================================================== */
 
         function startWeddingMusic() {
@@ -891,7 +955,9 @@
         }
 
 
-        /* DESKTOP AUTOPLAY */
+        /* ==================================================
+           DESKTOP AUTOPLAY ATTEMPT
+           ================================================== */
 
         if (
             window.matchMedia(
@@ -899,15 +965,16 @@
             ).matches
         ) {
 
-            startWeddingMusic().catch(
-                function() {}
-            );
+            startWeddingMusic()
+                .catch(
+                    function () {}
+                );
 
         }
 
 
         /* ==================================================
-           MOBILE OPEN INVITATION
+           MOBILE TAP TO OPEN
            ================================================== */
 
         let invitationIsOpening =
@@ -917,8 +984,12 @@
         function openInvitation() {
 
 
-            if (invitationIsOpening) {
+            if (
+                invitationIsOpening
+            ) {
+
                 return;
+
             }
 
 
@@ -926,67 +997,116 @@
                 true;
 
 
-            startWeddingMusic()
+            /*
+                IMPORTANT:
 
-                .then(
+                play() happens directly inside
+                the user's tap event.
 
-                    function() {
+                This gives mobile browsers the
+                best chance of allowing audio.
+            */
 
-
-                        sessionStorage.setItem(
-                            "weddingMusicStarted",
-                            "true"
-                        );
-
-
-                        openOverlay.classList.add(
-                            "hidden"
-                        );
+            const playPromise =
+                startWeddingMusic();
 
 
-                        setTimeout(
+            if (
+                playPromise &&
+                typeof playPromise.then ===
+                "function"
+            ) {
 
-                            function() {
+                playPromise
 
-                                openOverlay.style.display =
-                                    "none";
+                    .then(
 
-                            },
+                        function () {
 
-                            650
 
-                        );
+                            sessionStorage.setItem(
+                                "weddingMusicStarted",
+                                "true"
+                            );
 
-                    }
 
-                )
+                            openOverlay
+                                .classList
+                                .add(
+                                    "hidden"
+                                );
 
-                .catch(
 
-                    function() {
+                            setTimeout(
 
-                        invitationIsOpening =
-                            false;
+                                function () {
 
-                    }
+                                    openOverlay.style.display =
+                                        "none";
 
-                );
+                                },
+
+                                650
+
+                            );
+
+                        }
+
+                    )
+
+                    .catch(
+
+                        function () {
+
+
+                            /*
+                                Don't remove the overlay
+                                if the browser refused
+                                to start the music.
+                            */
+
+                            invitationIsOpening =
+                                false;
+
+                        }
+
+                    );
+
+            }
 
         }
 
 
-        if (openOverlay) {
+        openOverlay.addEventListener(
+            "click",
+            openInvitation
+        );
 
-            openOverlay.addEventListener(
-                "click",
-                openInvitation
-            );
 
-        }
+        openOverlay.addEventListener(
+
+            "keydown",
+
+            function (event) {
+
+                if (
+                    event.key === "Enter" ||
+                    event.key === " "
+                ) {
+
+                    event.preventDefault();
+
+                    openInvitation();
+
+                }
+
+            }
+
+        );
 
 
         /* ==================================================
-           DESKTOP FALLBACK
+           DESKTOP CLICK FALLBACK
            ================================================== */
 
         if (
@@ -997,21 +1117,25 @@
 
             function desktopMusicUnlock() {
 
+
                 startWeddingMusic()
+
                     .then(
 
-                        function() {
+                        function () {
 
-                            document.removeEventListener(
-                                "click",
-                                desktopMusicUnlock
-                            );
+                            document
+                                .removeEventListener(
+                                    "click",
+                                    desktopMusicUnlock
+                                );
 
                         }
 
                     )
+
                     .catch(
-                        function() {}
+                        function () {}
                     );
 
             }
@@ -1026,12 +1150,12 @@
 
 
         /* ==================================================
-           SAVE MUSIC
+           SAVE MUSIC POSITION
            ================================================== */
 
         setInterval(
 
-            function() {
+            function () {
 
                 if (
                     !weddingMusic.paused &&
@@ -1049,7 +1173,7 @@
 
             },
 
-            200
+            250
 
         );
 
@@ -1058,43 +1182,66 @@
            NEXT PAGE
            ================================================== */
 
-        if (nextButton) {
+        nextButton.addEventListener(
 
-            nextButton.addEventListener(
+            "click",
 
-                "click",
+            function (event) {
 
-                function(event) {
 
-                    event.preventDefault();
+                event.preventDefault();
 
+
+                if (
+                    Number.isFinite(
+                        weddingMusic.currentTime
+                    )
+                ) {
 
                     sessionStorage.setItem(
                         "weddingMusicTime",
                         weddingMusic.currentTime
                     );
 
-
-                    window.location.href =
-                        "page2.html";
-
                 }
 
-            );
 
-        }
+                sessionStorage.setItem(
+                    "weddingMusicStarted",
+                    "true"
+                );
 
+
+                window.location.href =
+                    "page2.html";
+
+            }
+
+        );
+
+
+        /* ==================================================
+           SAVE BEFORE PAGE CLOSES
+           ================================================== */
 
         window.addEventListener(
 
             "pagehide",
 
-            function() {
+            function () {
 
-                sessionStorage.setItem(
-                    "weddingMusicTime",
-                    weddingMusic.currentTime
-                );
+                if (
+                    Number.isFinite(
+                        weddingMusic.currentTime
+                    )
+                ) {
+
+                    sessionStorage.setItem(
+                        "weddingMusicTime",
+                        weddingMusic.currentTime
+                    );
+
+                }
 
             }
 
