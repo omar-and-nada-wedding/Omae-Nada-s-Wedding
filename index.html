@@ -55,25 +55,33 @@
 
         .page1 {
             position: relative;
+
             width: 100%;
+
             overflow: hidden;
         }
 
 
         /* ==================================================
-           MAIN PHOTO
+           COUPLE PHOTO
            ================================================== */
 
         .page1 > img:first-child {
-            display: block;
             width: 100%;
             height: auto;
+
+            display: block;
         }
 
 
         /* ==================================================
            ANIMATIONS
            ================================================== */
+
+
+        /* OMAR:
+           LEFT → RIGHT
+        */
 
         @keyframes omarEnter {
 
@@ -98,6 +106,10 @@
         }
 
 
+        /* NADA:
+           RIGHT → LEFT
+        */
+
         @keyframes nadaEnter {
 
             from {
@@ -120,6 +132,10 @@
 
         }
 
+
+        /* AMPERSAND:
+           TOP → DOWN
+        */
 
         @keyframes ampersandEnter {
 
@@ -144,6 +160,10 @@
         }
 
 
+        /* ANNOUNCEMENT:
+           LEFT → RIGHT WIPE
+        */
+
         @keyframes announcementReveal {
 
             from {
@@ -164,6 +184,10 @@
 
         }
 
+
+        /* NEXT BUTTON:
+           LEFT → RIGHT
+        */
 
         @keyframes buttonEnter {
 
@@ -354,12 +378,15 @@
         .next-button img {
             width: 100%;
             height: auto;
+
             display: block;
         }
 
 
         /* ==================================================
-           PHONE OPEN-INVITATION OVERLAY
+           TAP-TO-OPEN OVERLAY
+
+           Hidden on desktop.
            ================================================== */
 
         .open-overlay {
@@ -373,6 +400,12 @@
 
         @media (max-width: 600px) {
 
+
+            /*
+               Removes the black area that was
+               appearing underneath Page 1.
+            */
+
             body {
                 background-color: white;
             }
@@ -381,17 +414,11 @@
             .page1 {
                 width: 100%;
 
-                min-height: 100vh;
-
                 background-color: white;
             }
 
 
-            .page1 > img:first-child {
-                width: 100%;
-                height: auto;
-            }
-
+            /* OMAR */
 
             .omar {
                 top: 44.5%;
@@ -401,6 +428,8 @@
             }
 
 
+            /* AMPERSAND */
+
             .ampersand {
                 top: 48%;
                 left: 49%;
@@ -409,6 +438,8 @@
             }
 
 
+            /* NADA */
+
             .nada {
                 top: 53%;
                 left: 50.5%;
@@ -416,6 +447,8 @@
                 font-size: 9vw;
             }
 
+
+            /* ANNOUNCEMENT */
 
             .announcement {
                 top: 64%;
@@ -427,6 +460,8 @@
             }
 
 
+            /* NEXT */
+
             .next-button {
                 top: 82%;
                 left: 50%;
@@ -435,9 +470,9 @@
             }
 
 
-            /* =========================
-               TAP TO OPEN OVERLAY
-               ========================= */
+            /* ==================================================
+               PHONE OPEN OVERLAY
+               ================================================== */
 
             .open-overlay {
                 position: fixed;
@@ -453,9 +488,9 @@
 
                 background-color: white;
 
-                cursor: pointer;
-
                 opacity: 1;
+
+                cursor: pointer;
 
                 transition:
                     opacity
@@ -465,6 +500,8 @@
 
 
             .open-overlay-content {
+                width: 90%;
+
                 padding: 30px;
 
                 text-align: center;
@@ -476,6 +513,8 @@
             .open-overlay-title {
                 margin: 0;
 
+                color: #5a5b5e;
+
                 font-family: "Dream Avenue", serif;
                 font-weight: normal;
 
@@ -484,11 +523,15 @@
                 line-height: 1;
 
                 letter-spacing: 0.08em;
+
+                text-transform: uppercase;
             }
 
 
             .open-overlay-subtitle {
                 margin: 22px 0 0;
+
+                color: #5a5b5e;
 
                 font-family: "Blastine", cursive;
                 font-weight: normal;
@@ -586,7 +629,7 @@
     >
 
 
-        <!-- MAIN PHOTO -->
+        <!-- COUPLE PHOTO -->
 
         <img
             src="images/couple.jpg"
@@ -666,7 +709,7 @@
 
 
         /* ==================================================
-           MUSIC SETUP
+           ELEMENTS
            ================================================== */
 
         const weddingMusic =
@@ -691,7 +734,7 @@
 
 
         /* ==================================================
-           RESTORE SAVED MUSIC POSITION
+           RESTORE PREVIOUS MUSIC POSITION
            ================================================== */
 
         const savedMusicTime =
@@ -706,7 +749,9 @@
 
             function() {
 
+
                 if (savedMusicTime !== null) {
+
 
                     const restoredTime =
                         parseFloat(
@@ -756,13 +801,9 @@
 
             catch (error) {
 
-                /*
-                   Browser blocked automatic
-                   playback.
-
-                   On phone, the overlay tap
-                   handles this.
-                */
+                console.log(
+                    "Waiting for user interaction before playing audio."
+                );
 
             }
 
@@ -770,7 +811,9 @@
 
 
         /* ==================================================
-           DESKTOP AUTOPLAY ATTEMPT
+           DESKTOP
+
+           Try normal autoplay.
            ================================================== */
 
         if (
@@ -786,13 +829,18 @@
 
         /* ==================================================
            PHONE TAP-TO-OPEN
+
+           ONE interaction:
+           1. start music
+           2. fade overlay
+           3. remove overlay
            ================================================== */
 
         if (openOverlay) {
 
             openOverlay.addEventListener(
 
-                "click",
+                "pointerup",
 
                 async function() {
 
@@ -826,29 +874,38 @@
 
 
         /* ==================================================
-           DESKTOP / GENERAL FALLBACK
+           DESKTOP FALLBACK
 
-           If autoplay is blocked,
-           first interaction starts music.
+           If autoplay was blocked, any first
+           interaction can start the music.
            ================================================== */
 
-        async function unlockWeddingMusic() {
+        if (
+            window.matchMedia(
+                "(min-width: 601px)"
+            ).matches
+        ) {
 
-            await startWeddingMusic();
+            document.addEventListener(
+
+                "pointerup",
+
+                function desktopMusicUnlock() {
 
 
-            document.removeEventListener(
-                "pointerdown",
-                unlockWeddingMusic
+                    startWeddingMusic();
+
+
+                    document.removeEventListener(
+                        "pointerup",
+                        desktopMusicUnlock
+                    );
+
+                }
+
             );
 
         }
-
-
-        document.addEventListener(
-            "pointerdown",
-            unlockWeddingMusic
-        );
 
 
         /* ==================================================
@@ -858,6 +915,7 @@
         setInterval(
 
             function() {
+
 
                 if (
                     !weddingMusic.paused &&
@@ -890,18 +948,10 @@
 
                 "click",
 
-                async function(event) {
+                function(event) {
 
 
                     event.preventDefault();
-
-
-                    /*
-                       Ensure music is playing before
-                       moving to Page 2.
-                    */
-
-                    await startWeddingMusic();
 
 
                     sessionStorage.setItem(
@@ -910,18 +960,8 @@
                     );
 
 
-                    setTimeout(
-
-                        function() {
-
-                            window.location.href =
-                                "page2.html";
-
-                        },
-
-                        100
-
-                    );
+                    window.location.href =
+                        "page2.html";
 
                 }
 
@@ -931,7 +971,7 @@
 
 
         /* ==================================================
-           SAVE WHEN LEAVING PAGE
+           SAVE MUSIC WHEN PAGE CLOSES
            ================================================== */
 
         window.addEventListener(
@@ -939,6 +979,7 @@
             "pagehide",
 
             function() {
+
 
                 if (
                     Number.isFinite(
