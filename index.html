@@ -7,6 +7,77 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
+    <!-- ==================================================
+         WEBSITE LINK PREVIEW / THUMBNAIL
+         ================================================== -->
+
+    <meta
+        property="og:title"
+        content="Omar & Nada - Wedding Invitation"
+    >
+
+    <meta
+        property="og:description"
+        content="We are happy to invite you to celebrate our wedding."
+    >
+
+    <meta
+        property="og:type"
+        content="website"
+    >
+
+    <meta
+        property="og:url"
+        content="https://omarandnada.github.io/"
+    >
+
+    <meta
+        property="og:image"
+        content="https://omarandnada.github.io/images/wedding-thumbnail.jpg"
+    >
+
+    <meta
+        property="og:image:width"
+        content="1200"
+    >
+
+    <meta
+        property="og:image:height"
+        content="630"
+    >
+
+    <meta
+        property="og:image:alt"
+        content="Omar and Nada Wedding Invitation"
+    >
+
+
+    <!-- ==================================================
+         TWITTER / X LINK PREVIEW
+         ================================================== -->
+
+    <meta
+        name="twitter:card"
+        content="summary_large_image"
+    >
+
+    <meta
+        name="twitter:title"
+        content="Omar & Nada - Wedding Invitation"
+    >
+
+    <meta
+        name="twitter:description"
+        content="We are happy to invite you to celebrate our wedding."
+    >
+
+    <meta
+        name="twitter:image"
+        content="https://omarandnada.github.io/images/wedding-thumbnail.jpg"
+    >
+
+
     <style>
 
         /* ==================================================
@@ -55,7 +126,9 @@
 
         .page1 {
             position: relative;
+
             width: 100%;
+
             overflow: hidden;
         }
 
@@ -67,6 +140,7 @@
         .page1 > img:first-child {
             width: 100%;
             height: auto;
+
             display: block;
         }
 
@@ -74,8 +148,6 @@
         /* ==================================================
            ANIMATIONS
            ================================================== */
-
-        /* OMAR: LEFT → RIGHT */
 
         @keyframes omarEnter {
 
@@ -100,8 +172,6 @@
         }
 
 
-        /* NADA: RIGHT → LEFT */
-
         @keyframes nadaEnter {
 
             from {
@@ -124,8 +194,6 @@
 
         }
 
-
-        /* AMPERSAND: TOP → DOWN */
 
         @keyframes ampersandEnter {
 
@@ -150,8 +218,6 @@
         }
 
 
-        /* ANNOUNCEMENT: LEFT → RIGHT WIPE */
-
         @keyframes announcementReveal {
 
             from {
@@ -172,8 +238,6 @@
 
         }
 
-
-        /* NEXT BUTTON: LEFT → RIGHT */
 
         @keyframes buttonEnter {
 
@@ -364,14 +428,13 @@
         .next-button img {
             width: 100%;
             height: auto;
+
             display: block;
         }
 
 
         /* ==================================================
-           TAP-TO-OPEN OVERLAY
-
-           Hidden on desktop.
+           OPEN-INVITATION OVERLAY
            ================================================== */
 
         .open-overlay {
@@ -385,9 +448,6 @@
 
         @media (max-width: 600px) {
 
-
-            /* WHITE BACKGROUND FIX */
-
             body {
                 background-color: white;
             }
@@ -395,11 +455,10 @@
 
             .page1 {
                 width: 100%;
+
                 background-color: white;
             }
 
-
-            /* OMAR */
 
             .omar {
                 top: 44.5%;
@@ -409,8 +468,6 @@
             }
 
 
-            /* AMPERSAND */
-
             .ampersand {
                 top: 48%;
                 left: 49%;
@@ -419,8 +476,6 @@
             }
 
 
-            /* NADA */
-
             .nada {
                 top: 53%;
                 left: 50.5%;
@@ -428,8 +483,6 @@
                 font-size: 9vw;
             }
 
-
-            /* ANNOUNCEMENT */
 
             .announcement {
                 top: 64%;
@@ -441,8 +494,6 @@
             }
 
 
-            /* NEXT */
-
             .next-button {
                 top: 82%;
                 left: 50%;
@@ -452,7 +503,7 @@
 
 
             /* ==================================================
-               PHONE OPEN OVERLAY
+               TAP TO OPEN OVERLAY
                ================================================== */
 
             .open-overlay {
@@ -489,8 +540,6 @@
             }
 
 
-            /* ONLY TEXT ON THE OVERLAY */
-
             .open-overlay-text {
                 margin: 0;
 
@@ -500,6 +549,7 @@
                 font-weight: normal;
 
                 font-size: 7vw;
+
                 line-height: 1.3;
 
                 letter-spacing: 0.08em;
@@ -765,9 +815,7 @@
 
 
         /* ==================================================
-           DESKTOP
-
-           Try normal autoplay.
+           DESKTOP AUTOPLAY
            ================================================== */
 
         if (
@@ -782,43 +830,81 @@
 
 
         /* ==================================================
-           PHONE TAP-TO-OPEN
-
-           1. Start music
-           2. Fade overlay
-           3. Reveal Page 1
+           PHONE TAP TO OPEN
            ================================================== */
+
+        let invitationOpened = false;
+
+
+        async function openInvitation() {
+
+            if (invitationOpened) {
+                return;
+            }
+
+
+            invitationOpened = true;
+
+
+            await startWeddingMusic();
+
+
+            openOverlay.classList.add(
+                "hidden"
+            );
+
+
+            setTimeout(
+
+                function() {
+
+                    openOverlay.style.display =
+                        "none";
+
+                },
+
+                650
+
+            );
+
+        }
+
 
         if (openOverlay) {
 
+
+            /*
+               Mobile:
+               music starts as soon as the
+               finger touches the opening screen.
+            */
+
             openOverlay.addEventListener(
 
-                "pointerup",
+                "touchstart",
 
-                async function() {
+                openInvitation,
+
+                {
+                    once: true,
+                    passive: true
+                }
+
+            );
 
 
-                    await startWeddingMusic();
+            /*
+               Desktop / browser fallback.
+            */
 
+            openOverlay.addEventListener(
 
-                    openOverlay.classList.add(
-                        "hidden"
-                    );
+                "click",
 
+                openInvitation,
 
-                    setTimeout(
-
-                        function() {
-
-                            openOverlay.style.display =
-                                "none";
-
-                        },
-
-                        650
-
-                    );
-
+                {
+                    once: true
                 }
 
             );
@@ -828,9 +914,6 @@
 
         /* ==================================================
            DESKTOP FALLBACK
-
-           If autoplay was blocked, the first
-           interaction starts the music.
            ================================================== */
 
         if (
