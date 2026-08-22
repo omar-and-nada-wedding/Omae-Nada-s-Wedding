@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+
+    <meta charset="UTF-8">
 
     <title>Omar & Nada - Wedding Invitation</title>
 
@@ -12,7 +14,7 @@
 
 
     <!-- ==================================================
-         WEBSITE LINK PREVIEW / OPEN GRAPH
+         WEBSITE LINK PREVIEW / THUMBNAIL
          ================================================== -->
 
     <meta
@@ -71,9 +73,7 @@
     >
 
 
-    <!-- ==================================================
-         TWITTER / X PREVIEW
-         ================================================== -->
+    <!-- TWITTER / X -->
 
     <meta
         name="twitter:card"
@@ -102,6 +102,113 @@
     >
 
 
+    <!-- ==================================================
+         PRELOAD PAGE 1 CRITICAL ASSETS
+         ================================================== -->
+
+    <link
+        rel="preload"
+        href="images/couple.jpg"
+        as="image"
+        fetchpriority="high"
+    >
+
+    <link
+        rel="preload"
+        href="fonts/dream-avenue.woff"
+        as="font"
+        type="font/woff"
+        crossorigin
+    >
+
+    <link
+        rel="preload"
+        href="fonts/Blastine.woff"
+        as="font"
+        type="font/woff"
+        crossorigin
+    >
+
+    <link
+        rel="preload"
+        href="music/wedding-music.mp3"
+        as="audio"
+        type="audio/mpeg"
+    >
+
+
+    <!-- ==================================================
+         PREPARE PAGE 2 IN BACKGROUND
+         ================================================== -->
+
+    <link
+        rel="prefetch"
+        href="page2.html"
+    >
+
+    <link
+        rel="prefetch"
+        href="images/couple2.jpg"
+        as="image"
+    >
+
+    <link
+        rel="prefetch"
+        href="images/heart1.png"
+        as="image"
+    >
+
+    <link
+        rel="prefetch"
+        href="images/heart2.png"
+        as="image"
+    >
+
+    <link
+        rel="prefetch"
+        href="images/wedding-rings.png"
+        as="image"
+    >
+
+    <link
+        rel="prefetch"
+        href="images/flowers.png"
+        as="image"
+    >
+
+    <link
+        rel="prefetch"
+        href="fonts/The-something-script.woff"
+        as="font"
+        type="font/woff"
+        crossorigin
+    >
+
+    <link
+        rel="prefetch"
+        href="fonts/Ovo.woff"
+        as="font"
+        type="font/woff"
+        crossorigin
+    >
+
+    <link
+        rel="prefetch"
+        href="fonts/della-respira.woff"
+        as="font"
+        type="font/woff"
+        crossorigin
+    >
+
+    <link
+        rel="prefetch"
+        href="fonts/PlayfairDisplay-Regular.ttf"
+        as="font"
+        type="font/ttf"
+        crossorigin
+    >
+
+
     <style>
 
         /* ==================================================
@@ -113,6 +220,7 @@
             src: url("fonts/dream-avenue.woff") format("woff");
             font-weight: normal;
             font-style: normal;
+            font-display: swap;
         }
 
         @font-face {
@@ -120,6 +228,7 @@
             src: url("fonts/Blastine.woff") format("woff");
             font-weight: normal;
             font-style: normal;
+            font-display: swap;
         }
 
 
@@ -155,10 +264,6 @@
         }
 
 
-        /* ==================================================
-           MAIN PHOTO
-           ================================================== */
-
         .page1 > img:first-child {
             display: block;
             width: 100%;
@@ -174,20 +279,12 @@
 
             from {
                 opacity: 0;
-
-                transform: translate(
-                    -80px,
-                    -50%
-                );
+                transform: translate(-80px, -50%);
             }
 
             to {
                 opacity: 1;
-
-                transform: translate(
-                    0,
-                    -50%
-                );
+                transform: translate(0, -50%);
             }
 
         }
@@ -197,20 +294,12 @@
 
             from {
                 opacity: 0;
-
-                transform: translate(
-                    80px,
-                    -50%
-                );
+                transform: translate(80px, -50%);
             }
 
             to {
                 opacity: 1;
-
-                transform: translate(
-                    0,
-                    -50%
-                );
+                transform: translate(0, -50%);
             }
 
         }
@@ -229,11 +318,7 @@
 
             to {
                 opacity: 1;
-
-                transform: translate(
-                    -50%,
-                    -50%
-                );
+                transform: translate(-50%, -50%);
             }
 
         }
@@ -243,18 +328,12 @@
 
             from {
                 opacity: 0;
-
-                clip-path: inset(
-                    0 100% 0 0
-                );
+                clip-path: inset(0 100% 0 0);
             }
 
             to {
                 opacity: 1;
-
-                clip-path: inset(
-                    0 0 0 0
-                );
+                clip-path: inset(0 0 0 0);
             }
 
         }
@@ -273,18 +352,14 @@
 
             to {
                 opacity: 1;
-
-                transform: translate(
-                    -50%,
-                    -50%
-                );
+                transform: translate(-50%, -50%);
             }
 
         }
 
 
         /* ==================================================
-           NAME STYLE
+           NAMES
            ================================================== */
 
         .omar,
@@ -304,21 +379,13 @@
         }
 
 
-        /* ==================================================
-           OMAR
-           ================================================== */
-
         .omar {
             top: 44.5%;
             left: 22%;
 
             transform: translateY(-50%);
 
-            font-size: clamp(
-                58px,
-                9vw,
-                140px
-            );
+            font-size: clamp(58px, 9vw, 140px);
 
             animation:
                 omarEnter
@@ -328,10 +395,6 @@
                 both;
         }
 
-
-        /* ==================================================
-           AMPERSAND
-           ================================================== */
 
         .ampersand {
             position: absolute;
@@ -353,21 +416,13 @@
         }
 
 
-        /* ==================================================
-           NADA
-           ================================================== */
-
         .nada {
             top: 53%;
             left: 50.5%;
 
             transform: translateY(-50%);
 
-            font-size: clamp(
-                58px,
-                9vw,
-                140px
-            );
+            font-size: clamp(58px, 9vw, 140px);
 
             animation:
                 nadaEnter
@@ -399,11 +454,7 @@
             font-family: "Blastine", cursive;
             font-weight: normal;
 
-            font-size: clamp(
-                58px,
-                9vw,
-                140px
-            );
+            font-size: clamp(58px, 9vw, 140px);
 
             white-space: nowrap;
 
@@ -464,13 +515,10 @@
 
 
         /* ==================================================
-           PHONE VERSION
+           PHONE
            ================================================== */
 
         @media (max-width: 600px) {
-
-
-            /* FULL SCREEN PHONE LAYOUT */
 
             html,
             body {
@@ -489,10 +537,6 @@
 
                 width: 100%;
 
-                /*
-                   Fill the whole visible phone screen.
-                */
-
                 height: 100dvh;
 
                 overflow: hidden;
@@ -501,9 +545,7 @@
             }
 
 
-            /* ==================================================
-               FULL-SCREEN BACKGROUND PHOTO
-               ================================================== */
+            /* FULL MOBILE PHOTO */
 
             .page1 > img:first-child {
                 position: absolute;
@@ -517,18 +559,9 @@
 
                 object-fit: cover;
 
-                /*
-                   Change this later if you want
-                   the crop moved left or right.
-                */
-
                 object-position: center center;
             }
 
-
-            /* ==================================================
-               MOBILE TEXT
-               ================================================== */
 
             .omar {
                 top: 44.5%;
@@ -564,9 +597,7 @@
             }
 
 
-            /* ==================================================
-               MOBILE NEXT BUTTON
-               ================================================== */
+            /* MOBILE BUTTON */
 
             .next-button {
                 top: 86%;
@@ -577,7 +608,7 @@
 
 
             /* ==================================================
-               MOBILE TAP-TO-OPEN OVERLAY
+               TAP TO OPEN
                ================================================== */
 
             .open-overlay {
@@ -649,10 +680,6 @@
         }
 
 
-        /* ==================================================
-           EXTRA SMALL PHONES
-           ================================================== */
-
         @media (max-width: 380px) {
 
             .omar,
@@ -689,7 +716,7 @@
 
 
     <!-- ==================================================
-         MOBILE TAP-TO-OPEN OVERLAY
+         TAP TO OPEN
          ================================================== -->
 
     <div
@@ -697,7 +724,6 @@
         id="openOverlay"
         role="button"
         tabindex="0"
-        aria-label="Tap to open the invitation"
     >
 
         <div class="open-overlay-content">
@@ -721,38 +747,31 @@
     >
 
 
-        <!-- MAIN PHOTO -->
-
         <img
             src="images/couple.jpg"
             alt="Omar and Nada"
+            fetchpriority="high"
+            decoding="async"
         >
 
-
-        <!-- OMAR -->
 
         <h1 class="omar">
             OMAR
         </h1>
 
 
-        <!-- AMPERSAND -->
-
         <img
             class="ampersand"
             src="images/ampersand.png"
             alt="&"
+            decoding="async"
         >
 
-
-        <!-- NADA -->
 
         <h1 class="nada">
             NADA
         </h1>
 
-
-        <!-- ANNOUNCEMENT -->
 
         <div class="announcement">
 
@@ -763,8 +782,6 @@
         </div>
 
 
-        <!-- NEXT BUTTON -->
-
         <a
             href="page2.html"
             class="next-button"
@@ -773,6 +790,7 @@
             <img
                 src="images/next-button.png"
                 alt="Continue to invitation"
+                decoding="async"
             >
 
         </a>
@@ -793,12 +811,7 @@
     ></audio>
 
 
-    <!-- ==================================================
-         JAVASCRIPT
-         ================================================== -->
-
     <script>
-
 
         const weddingMusic =
             document.getElementById(
@@ -868,7 +881,7 @@
 
 
         /* ==================================================
-           START MUSIC
+           MUSIC
            ================================================== */
 
         function startWeddingMusic() {
@@ -878,9 +891,7 @@
         }
 
 
-        /* ==================================================
-           DESKTOP AUTOPLAY
-           ================================================== */
+        /* DESKTOP AUTOPLAY */
 
         if (
             window.matchMedia(
@@ -889,15 +900,7 @@
         ) {
 
             startWeddingMusic().catch(
-
-                function() {
-
-                    /*
-                       Browser requires interaction.
-                    */
-
-                }
-
+                function() {}
             );
 
         }
@@ -915,9 +918,7 @@
 
 
             if (invitationIsOpening) {
-
                 return;
-
             }
 
 
@@ -925,66 +926,51 @@
                 true;
 
 
-            const playRequest =
-                startWeddingMusic();
+            startWeddingMusic()
+
+                .then(
+
+                    function() {
 
 
-            if (
-                playRequest !== undefined
-            ) {
-
-                playRequest
-                    .then(
-
-                        function() {
+                        sessionStorage.setItem(
+                            "weddingMusicStarted",
+                            "true"
+                        );
 
 
-                            sessionStorage.setItem(
-                                "weddingMusicStarted",
-                                "true"
-                            );
+                        openOverlay.classList.add(
+                            "hidden"
+                        );
 
 
-                            openOverlay.classList.add(
-                                "hidden"
-                            );
+                        setTimeout(
 
+                            function() {
 
-                            setTimeout(
+                                openOverlay.style.display =
+                                    "none";
 
-                                function() {
+                            },
 
-                                    openOverlay.style.display =
-                                        "none";
+                            650
 
-                                },
+                        );
 
-                                650
+                    }
 
-                            );
+                )
 
-                        }
+                .catch(
 
-                    )
-                    .catch(
+                    function() {
 
-                        function(error) {
+                        invitationIsOpening =
+                            false;
 
+                    }
 
-                            invitationIsOpening =
-                                false;
-
-
-                            console.log(
-                                "Music start was blocked:",
-                                error
-                            );
-
-                        }
-
-                    );
-
-            }
+                );
 
         }
 
@@ -994,28 +980,6 @@
             openOverlay.addEventListener(
                 "click",
                 openInvitation
-            );
-
-
-            openOverlay.addEventListener(
-
-                "keydown",
-
-                function(event) {
-
-                    if (
-                        event.key === "Enter" ||
-                        event.key === " "
-                    ) {
-
-                        event.preventDefault();
-
-                        openInvitation();
-
-                    }
-
-                }
-
             );
 
         }
@@ -1062,7 +1026,7 @@
 
 
         /* ==================================================
-           SAVE MUSIC POSITION
+           SAVE MUSIC
            ================================================== */
 
         setInterval(
@@ -1091,7 +1055,7 @@
 
 
         /* ==================================================
-           NEXT BUTTON
+           NEXT PAGE
            ================================================== */
 
         if (nextButton) {
@@ -1101,7 +1065,6 @@
                 "click",
 
                 function(event) {
-
 
                     event.preventDefault();
 
@@ -1122,33 +1085,20 @@
         }
 
 
-        /* ==================================================
-           SAVE MUSIC WHEN LEAVING
-           ================================================== */
-
         window.addEventListener(
 
             "pagehide",
 
             function() {
 
-                if (
-                    Number.isFinite(
-                        weddingMusic.currentTime
-                    )
-                ) {
-
-                    sessionStorage.setItem(
-                        "weddingMusicTime",
-                        weddingMusic.currentTime
-                    );
-
-                }
+                sessionStorage.setItem(
+                    "weddingMusicTime",
+                    weddingMusic.currentTime
+                );
 
             }
 
         );
-
 
     </script>
 
