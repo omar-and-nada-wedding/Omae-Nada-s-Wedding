@@ -42,17 +42,12 @@
 
     <meta
         property="og:image"
-        content="https://omar-and-nada-wedding.github.io/Omar-Nada-s-Wedding/images/wedding-thumbnail.jpg?v=3"
-    >
-
-    <meta
-        property="og:image:url"
-        content="https://omar-and-nada-wedding.github.io/Omar-Nada-s-Wedding/images/wedding-thumbnail.jpg?v=3"
+        content="https://omar-and-nada-wedding.github.io/Omar-Nada-s-Wedding/images/wedding-thumbnail.jpg"
     >
 
     <meta
         property="og:image:secure_url"
-        content="https://omar-and-nada-wedding.github.io/Omar-Nada-s-Wedding/images/wedding-thumbnail.jpg?v=3"
+        content="https://omar-and-nada-wedding.github.io/Omar-Nada-s-Wedding/images/wedding-thumbnail.jpg"
     >
 
     <meta
@@ -97,7 +92,7 @@
 
     <meta
         name="twitter:image"
-        content="https://omar-and-nada-wedding.github.io/Omar-Nada-s-Wedding/images/wedding-thumbnail.jpg?v=3"
+        content="https://omar-and-nada-wedding.github.io/Omar-Nada-s-Wedding/images/wedding-thumbnail.jpg"
     >
 
 
@@ -120,7 +115,6 @@
             font-style: normal;
         }
 
-
         @font-face {
             font-family: "Blastine";
             src: url("fonts/Blastine.woff") format("woff");
@@ -137,19 +131,15 @@
             box-sizing: border-box;
         }
 
-
         html,
         body {
             margin: 0;
             padding: 0;
-
             width: 100%;
         }
 
-
         body {
             background-color: black;
-
             overflow-x: hidden;
         }
 
@@ -160,22 +150,19 @@
 
         .page1 {
             position: relative;
-
             width: 100%;
-
             overflow: hidden;
         }
 
 
         /* ==================================================
-           COUPLE PHOTO
+           MAIN PHOTO
            ================================================== */
 
         .page1 > img:first-child {
+            display: block;
             width: 100%;
             height: auto;
-
-            display: block;
         }
 
 
@@ -193,7 +180,6 @@
                     -50%
                 );
             }
-
 
             to {
                 opacity: 1;
@@ -218,7 +204,6 @@
                 );
             }
 
-
             to {
                 opacity: 1;
 
@@ -242,7 +227,6 @@
                 );
             }
 
-
             to {
                 opacity: 1;
 
@@ -264,7 +248,6 @@
                     0 100% 0 0
                 );
             }
-
 
             to {
                 opacity: 1;
@@ -288,7 +271,6 @@
                 );
             }
 
-
             to {
                 opacity: 1;
 
@@ -302,7 +284,7 @@
 
 
         /* ==================================================
-           SHARED NAME STYLE
+           NAME STYLE
            ================================================== */
 
         .omar,
@@ -440,7 +422,7 @@
 
 
         /* ==================================================
-           NEXT PAGE BUTTON
+           NEXT BUTTON
            ================================================== */
 
         .next-button {
@@ -473,7 +455,7 @@
 
 
         /* ==================================================
-           OPEN INVITATION OVERLAY
+           OPEN OVERLAY
            ================================================== */
 
         .open-overlay {
@@ -488,9 +470,7 @@
         @media (max-width: 600px) {
 
 
-            /* ==================================================
-               FULL-SCREEN PHONE PAGE
-               ================================================== */
+            /* FULL SCREEN PHONE LAYOUT */
 
             html,
             body {
@@ -498,7 +478,7 @@
                 padding: 0;
 
                 width: 100%;
-                min-height: 100%;
+                height: 100%;
 
                 background-color: black;
             }
@@ -510,10 +490,10 @@
                 width: 100%;
 
                 /*
-                   Fill the visible phone screen.
+                   Fill the whole visible phone screen.
                 */
 
-                height: 100svh;
+                height: 100dvh;
 
                 overflow: hidden;
 
@@ -521,17 +501,14 @@
             }
 
 
-            /*
-               Make the couple photo fill the entire
-               phone screen and crop slightly instead
-               of leaving empty space underneath.
-            */
+            /* ==================================================
+               FULL-SCREEN BACKGROUND PHOTO
+               ================================================== */
 
             .page1 > img:first-child {
                 position: absolute;
 
-                top: 50%;
-                left: 50%;
+                inset: 0;
 
                 width: 100%;
                 height: 100%;
@@ -540,15 +517,18 @@
 
                 object-fit: cover;
 
-                object-position: center center;
+                /*
+                   Change this later if you want
+                   the crop moved left or right.
+                */
 
-                transform:
-                    translate(-50%, -50%)
-                    scale(1.06);
+                object-position: center center;
             }
 
 
-            /* OMAR */
+            /* ==================================================
+               MOBILE TEXT
+               ================================================== */
 
             .omar {
                 top: 44.5%;
@@ -558,8 +538,6 @@
             }
 
 
-            /* AMPERSAND */
-
             .ampersand {
                 top: 48%;
                 left: 49%;
@@ -568,8 +546,6 @@
             }
 
 
-            /* NADA */
-
             .nada {
                 top: 53%;
                 left: 50.5%;
@@ -577,8 +553,6 @@
                 font-size: 9vw;
             }
 
-
-            /* ANNOUNCEMENT */
 
             .announcement {
                 top: 64%;
@@ -590,18 +564,20 @@
             }
 
 
-            /* NEXT */
+            /* ==================================================
+               MOBILE NEXT BUTTON
+               ================================================== */
 
             .next-button {
-                top: 82%;
-                left: 90%;
+                top: 86%;
+                left: 84%;
 
                 width: 8%;
             }
 
 
             /* ==================================================
-               TAP TO OPEN OVERLAY
+               MOBILE TAP-TO-OPEN OVERLAY
                ================================================== */
 
             .open-overlay {
@@ -617,7 +593,7 @@
                 justify-content: center;
 
                 width: 100%;
-                min-height: 100dvh;
+                height: 100dvh;
 
                 background-color: white;
 
@@ -691,6 +667,9 @@
 
 
             .next-button {
+                top: 86%;
+                left: 84%;
+
                 width: 9%;
             }
 
@@ -710,7 +689,7 @@
 
 
     <!-- ==================================================
-         PHONE TAP-TO-OPEN OVERLAY
+         MOBILE TAP-TO-OPEN OVERLAY
          ================================================== -->
 
     <div
@@ -742,7 +721,7 @@
     >
 
 
-        <!-- COUPLE PHOTO -->
+        <!-- MAIN PHOTO -->
 
         <img
             src="images/couple.jpg"
@@ -784,7 +763,7 @@
         </div>
 
 
-        <!-- NEXT PAGE BUTTON -->
+        <!-- NEXT BUTTON -->
 
         <a
             href="page2.html"
@@ -803,7 +782,7 @@
 
 
     <!-- ==================================================
-         BACKGROUND MUSIC
+         MUSIC
          ================================================== -->
 
     <audio
@@ -820,10 +799,6 @@
 
     <script>
 
-
-        /* ==================================================
-           ELEMENTS
-           ================================================== */
 
         const weddingMusic =
             document.getElementById(
@@ -847,7 +822,7 @@
 
 
         /* ==================================================
-           RESTORE SAVED MUSIC POSITION
+           RESTORE MUSIC POSITION
            ================================================== */
 
         const savedMusicTime =
@@ -862,9 +837,7 @@
 
             function() {
 
-
                 if (savedMusicTime !== null) {
-
 
                     const restoredTime =
                         parseFloat(
@@ -906,7 +879,7 @@
 
 
         /* ==================================================
-           DESKTOP AUTOPLAY ATTEMPT
+           DESKTOP AUTOPLAY
            ================================================== */
 
         if (
@@ -934,7 +907,8 @@
            MOBILE OPEN INVITATION
            ================================================== */
 
-        let invitationIsOpening = false;
+        let invitationIsOpening =
+            false;
 
 
         function openInvitation() {
@@ -947,7 +921,8 @@
             }
 
 
-            invitationIsOpening = true;
+            invitationIsOpening =
+                true;
 
 
             const playRequest =
@@ -996,7 +971,8 @@
                         function(error) {
 
 
-                            invitationIsOpening = false;
+                            invitationIsOpening =
+                                false;
 
 
                             console.log(
@@ -1057,7 +1033,6 @@
 
             function desktopMusicUnlock() {
 
-
                 startWeddingMusic()
                     .then(
 
@@ -1094,7 +1069,6 @@
 
             function() {
 
-
                 if (
                     !weddingMusic.paused &&
                     Number.isFinite(
@@ -1117,7 +1091,7 @@
 
 
         /* ==================================================
-           NEXT PAGE BUTTON
+           NEXT BUTTON
            ================================================== */
 
         if (nextButton) {
@@ -1149,7 +1123,7 @@
 
 
         /* ==================================================
-           SAVE MUSIC WHEN LEAVING PAGE
+           SAVE MUSIC WHEN LEAVING
            ================================================== */
 
         window.addEventListener(
@@ -1157,7 +1131,6 @@
             "pagehide",
 
             function() {
-
 
                 if (
                     Number.isFinite(
