@@ -77,7 +77,7 @@
 
 
     <!-- ==================================================
-         TWITTER / X LINK PREVIEW
+         TWITTER / X PREVIEW
          ================================================== -->
 
     <meta
@@ -183,9 +183,6 @@
            ANIMATIONS
            ================================================== */
 
-
-        /* OMAR */
-
         @keyframes omarEnter {
 
             from {
@@ -209,8 +206,6 @@
 
         }
 
-
-        /* NADA */
 
         @keyframes nadaEnter {
 
@@ -236,8 +231,6 @@
         }
 
 
-        /* AMPERSAND */
-
         @keyframes ampersandEnter {
 
             from {
@@ -262,8 +255,6 @@
         }
 
 
-        /* ANNOUNCEMENT */
-
         @keyframes announcementReveal {
 
             from {
@@ -285,8 +276,6 @@
 
         }
 
-
-        /* NEXT BUTTON */
 
         @keyframes buttonEnter {
 
@@ -485,9 +474,6 @@
 
         /* ==================================================
            OPEN INVITATION OVERLAY
-
-           Desktop: hidden
-           Phone: shown
            ================================================== */
 
         .open-overlay {
@@ -502,18 +488,63 @@
         @media (max-width: 600px) {
 
 
-            /* REMOVE BLACK BLOCK */
+            /* ==================================================
+               FULL-SCREEN PHONE PAGE
+               ================================================== */
 
             html,
             body {
-                background-color: white;
+                margin: 0;
+                padding: 0;
+
+                width: 100%;
+                min-height: 100%;
+
+                background-color: black;
             }
 
 
             .page1 {
+                position: relative;
+
                 width: 100%;
 
-                background-color: white;
+                /*
+                   Fill the visible phone screen.
+                */
+
+                height: 100svh;
+
+                overflow: hidden;
+
+                background-color: black;
+            }
+
+
+            /*
+               Make the couple photo fill the entire
+               phone screen and crop slightly instead
+               of leaving empty space underneath.
+            */
+
+            .page1 > img:first-child {
+                position: absolute;
+
+                top: 50%;
+                left: 50%;
+
+                width: 100%;
+                height: 100%;
+
+                display: block;
+
+                object-fit: cover;
+
+                object-position: center center;
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(1.06);
             }
 
 
@@ -563,7 +594,7 @@
 
             .next-button {
                 top: 82%;
-                left: 70%;
+                left: 90%;
 
                 width: 8%;
             }
@@ -901,10 +932,6 @@
 
         /* ==================================================
            MOBILE OPEN INVITATION
-
-           IMPORTANT:
-           play() is called DIRECTLY from click.
-           Overlay only disappears AFTER playback succeeds.
            ================================================== */
 
         let invitationIsOpening = false;
@@ -922,11 +949,6 @@
 
             invitationIsOpening = true;
 
-
-            /*
-               The call to play() happens synchronously
-               inside the user's click event.
-            */
 
             const playRequest =
                 startWeddingMusic();
@@ -974,11 +996,6 @@
                         function(error) {
 
 
-                            /*
-                               Keep overlay visible so
-                               visitor can tap again.
-                            */
-
                             invitationIsOpening = false;
 
 
@@ -998,23 +1015,11 @@
 
         if (openOverlay) {
 
-            /*
-               ONE event only.
-
-               No touchstart.
-               No pointerup.
-               No competing event handlers.
-            */
-
             openOverlay.addEventListener(
                 "click",
                 openInvitation
             );
 
-
-            /*
-               Keyboard accessibility.
-            */
 
             openOverlay.addEventListener(
 
